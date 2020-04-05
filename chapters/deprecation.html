@@ -456,14 +456,14 @@ dates.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="185">{MUST} obtain approval of clients before API shut down</h2>
+<h2 id="185">{SHOULD} obtain approval of clients before API shut down</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Before shutting down an API, version of an API, or API feature the producer
 must make sure, that all clients have given their consent on a sunset date.
 Producers should help consumers to migrate to a potential new API or API
 feature by providing a migration manual and clearly state the time line for
-replacement availability and sunset (see also <a href="#189">{SHOULD} add <code>Deprecation</code> and <code>Sunset</code> header to responses</a>). Once all clients of
+replacement availability and sunset (see also <a href="#189">{MAY} add <code>Deprecation</code> and <code>Sunset</code> header to responses</a>). Once all clients of
 a sunset API feature are migrated, the producer may shut down the deprecated
 API feature.</p>
 </div>
@@ -511,7 +511,7 @@ breaking effects on ongoing consumers. See also <a href="#193">[193]</a>.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="189">{SHOULD} add <code>Deprecation</code> and <code>Sunset</code> header to responses</h2>
+<h2 id="189">{MAY} add <code>Deprecation</code> and <code>Sunset</code> header to responses</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>During the deprecation phase, the producer should add a <code>Deprecation: &lt;date-time&gt;</code>
@@ -553,21 +553,6 @@ Caching</a>, and our syntax was not compliant with {RFC-7234}#page-29[RFC 7234&#
 </div>
 </div>
 <div class="sect1">
-<h2 id="190">{SHOULD} add monitoring for <code>Deprecation</code> and <code>Sunset</code> header</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Clients should monitor the {Deprecation} and {Sunset} headers in HTTP responses
-to get information about future sunset of APIs and API features (see <a href="#189">{SHOULD} add <code>Deprecation</code> and <code>Sunset</code> header to responses</a>).
-We recommend that client owners build alerts on this monitoring information to
-ensure alignment with service owners on required migration task.</p>
-</div>
-<div class="paragraph">
-<p><strong>Hint:</strong> In earlier guideline versions, we used the <code>Warning</code> header to provide
-the deprecation info (see hint in <a href="#189">{SHOULD} add <code>Deprecation</code> and <code>Sunset</code> header to responses</a>).</p>
-</div>
-</div>
-</div>
-<div class="sect1">
 <h2 id="191">{MUST} not start using deprecated APIs</h2>
 <div class="sectionbody">
 <div class="paragraph">
@@ -578,7 +563,7 @@ the deprecation info (see hint in <a href="#189">{SHOULD} add <code>Deprecation<
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-04-05 20:30:43 UTC
+Last updated 2020-04-05 20:34:38 UTC
 </div>
 </div>
 </body>

@@ -1376,12 +1376,11 @@ a > code { background-color: #f0f0f0; padding: .1em .4em .1em .4em !important; f
 </li>
 <li><a href="#deprecation">8. Deprecation</a>
 <ul class="sectlevel2">
-<li><a href="#185"><span class="must-keyword"><strong>MUST</strong></span> obtain approval of clients before API shut down</a></li>
+<li><a href="#185"><span class="should-keyword"><strong>SHOULD</strong></span> obtain approval of clients before API shut down</a></li>
 <li><a href="#186"><span class="must-keyword"><strong>MUST</strong></span> collect external partner consent on deprecation time span</a></li>
 <li><a href="#187"><span class="must-keyword"><strong>MUST</strong></span> reflect deprecation in API specifications</a></li>
 <li><a href="#188"><span class="must-keyword"><strong>MUST</strong></span> monitor usage of deprecated API scheduled for sunset</a></li>
-<li><a href="#189"><span class="should-keyword"><strong>SHOULD</strong></span> add <code>Deprecation</code> and <code>Sunset</code> header to responses</a></li>
-<li><a href="#190"><span class="should-keyword"><strong>SHOULD</strong></span> add monitoring for <code>Deprecation</code> and <code>Sunset</code> header</a></li>
+<li><a href="#189"><span class="may-keyword"><strong>MAY</strong></span> add <code>Deprecation</code> and <code>Sunset</code> header to responses</a></li>
 <li><a href="#191"><span class="must-keyword"><strong>MUST</strong></span> not start using deprecated APIs</a></li>
 </ul>
 </li>
@@ -2639,13 +2638,13 @@ actions are well communicated and aligned using <em>deprecation</em> and <em>sun
 dates.</p>
 </div>
 <div class="sect2">
-<h3 id="185"><a class="link" href="#185"><span class="must-keyword"><strong>MUST</strong></span> obtain approval of clients before API shut down</a></h3>
+<h3 id="185"><a class="link" href="#185"><span class="should-keyword"><strong>SHOULD</strong></span> obtain approval of clients before API shut down</a></h3>
 <div class="paragraph">
 <p>Before shutting down an API, version of an API, or API feature the producer
 must make sure, that all clients have given their consent on a sunset date.
 Producers should help consumers to migrate to a potential new API or API
 feature by providing a migration manual and clearly state the time line for
-replacement availability and sunset (see also <a href="#189"><span class="should-keyword"><strong>SHOULD</strong></span> add <code>Deprecation</code> and <code>Sunset</code> header to responses</a>). Once all clients of
+replacement availability and sunset (see also <a href="#189"><span class="may-keyword"><strong>MAY</strong></span> add <code>Deprecation</code> and <code>Sunset</code> header to responses</a>). Once all clients of
 a sunset API feature are migrated, the producer may shut down the deprecated
 API feature.</p>
 </div>
@@ -2686,7 +2685,7 @@ breaking effects on ongoing consumers. See also <a href="#193"><span class="shou
 </div>
 </div>
 <div class="sect2">
-<h3 id="189"><a class="link" href="#189"><span class="should-keyword"><strong>SHOULD</strong></span> add <code>Deprecation</code> and <code>Sunset</code> header to responses</a></h3>
+<h3 id="189"><a class="link" href="#189"><span class="may-keyword"><strong>MAY</strong></span> add <code>Deprecation</code> and <code>Sunset</code> header to responses</a></h3>
 <div class="paragraph">
 <p>During the deprecation phase, the producer should add a <code>Deprecation: &lt;date-time&gt;</code>
 (see <a href="https://tools.ietf.org/html/draft-dalal-deprecation-header">draft: RFC
@@ -2723,19 +2722,6 @@ the deprecation info to clients. However, <code>Warning</code> header has a less
 semantics, will be obsolete with
 <a href="https://tools.ietf.org/html/draft-ietf-httpbis-cache-06">draft: RFC HTTP
 Caching</a>, and our syntax was not compliant with <a href="https://tools.ietf.org/html/rfc7234#page-29">RFC 7234&#8201;&#8212;&#8201;Warning header</a>.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="190"><a class="link" href="#190"><span class="should-keyword"><strong>SHOULD</strong></span> add monitoring for <code>Deprecation</code> and <code>Sunset</code> header</a></h3>
-<div class="paragraph">
-<p>Clients should monitor the <a href="https://tools.ietf.org/html/draft-dalal-deprecation-header"><code>Deprecation</code></a> and <a href="https://tools.ietf.org/html/rfc8594"><code>Sunset</code></a> headers in HTTP responses
-to get information about future sunset of APIs and API features (see <a href="#189"><span class="should-keyword"><strong>SHOULD</strong></span> add <code>Deprecation</code> and <code>Sunset</code> header to responses</a>).
-We recommend that client owners build alerts on this monitoring information to
-ensure alignment with service owners on required migration task.</p>
-</div>
-<div class="paragraph">
-<p><strong>Hint:</strong> In earlier guideline versions, we used the <code>Warning</code> header to provide
-the deprecation info (see hint in <a href="#189"><span class="should-keyword"><strong>SHOULD</strong></span> add <code>Deprecation</code> and <code>Sunset</code> header to responses</a>).</p>
 </div>
 </div>
 <div class="sect2">
@@ -9278,7 +9264,7 @@ header.prepend(nav);
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-04-05 20:30:43 UTC
+Last updated 2020-04-05 20:34:38 UTC
 </div>
 </div>
 <style>
