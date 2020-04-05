@@ -3684,7 +3684,26 @@ specific language types in Java will translate to <code>BigDecimal</code> for
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="yaml"><span class="error">Unresolved directive in chapters/common-data-types.adoc - include::../models/money-1.0.0.yaml[]</span></code></pre>
+<pre class="CodeRay highlight"><code data-lang="yaml"><span class="key">Money</span>:
+  <span class="key">type</span>: <span class="string"><span class="content">object</span></span>
+  <span class="key">properties</span>:
+    <span class="key">amount</span>:
+      <span class="key">type</span>: <span class="string"><span class="content">number</span></span>
+      <span class="key">description</span>: <span class="string"><span class="delimiter">&gt;</span><span class="content">
+        The amount describes unit and subunit of the currency in a single value,
+        where the integer part (digits before the decimal point) is for the
+        major unit and fractional part (digits after the decimal point) is for
+        the minor unit.</span></span>
+      <span class="key">format</span>: <span class="string"><span class="content">decimal</span></span>
+      <span class="key">example</span>: <span class="string"><span class="content">99.95</span></span>
+    <span class="key">currency</span>:
+      <span class="key">type</span>: <span class="string"><span class="content">string</span></span>
+      <span class="key">description</span>: <span class="string"><span class="content">3 letter currency code as defined by ISO-4217</span></span>
+      <span class="key">format</span>: <span class="string"><span class="content">iso-4217</span></span>
+      <span class="key">example</span>: <span class="string"><span class="content">EUR</span></span>
+  <span class="key">required</span>:
+    - <span class="string"><span class="content">amount</span></span>
+    - <span class="string"><span class="content">currency</span></span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -9530,7 +9549,7 @@ window.cookieconsent.initialise({
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-04-05 14:40:13 UTC
+Last updated 2020-04-05 14:40:33 UTC
 </div>
 </div>
 <style>

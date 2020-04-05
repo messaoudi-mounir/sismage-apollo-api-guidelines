@@ -456,7 +456,26 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight"><code class="language-yaml" data-lang="yaml">Unresolved directive in common-data-types.adoc - include::../models/money-1.0.0.yaml[]</code></pre>
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">Money:
+  type: object
+  properties:
+    amount:
+      type: number
+      description: &gt;
+        The amount describes unit and subunit of the currency in a single value,
+        where the integer part (digits before the decimal point) is for the
+        major unit and fractional part (digits after the decimal point) is for
+        the minor unit.
+      format: decimal
+      example: 99.95
+    currency:
+      type: string
+      description: 3 letter currency code as defined by ISO-4217
+      format: iso-4217
+      example: EUR
+  required:
+    - amount
+    - currency</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -876,7 +895,7 @@ and address types when modeling users and their addresses).</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-04-05 14:40:13 UTC
+Last updated 2020-04-05 14:40:33 UTC
 </div>
 </div>
 </body>
