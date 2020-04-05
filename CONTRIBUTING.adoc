@@ -1,0 +1,30 @@
+= Contributing
+
+== Pull requests only
+
+*DON'T* push to the master branch directly. Always use pull requests and
+let people discuss changes in pull request.
+
+Pull requests should only be merged after all discussions have been
+concluded and at least 2 reviewers gave their approvals.
+
+== Changelog for major changes
+
+When your pull request does major changes, please also add an entry to
+the changelog.
+
+== Rule Id
+
+Each of the rules has an unique Id. Rule Id is immutable and durable. It
+doesn't change until the content of the rule changes significantly.
+
+In order to ensure the uniqueness of the Ids you can use
+link:./check_uniqueness_of_rule_ids.sh[this script]. Preferably, you add this script
+as a `pre-commit` hook to your local repository:
+
+[source,bash]
+----
+cp check_uniqueness_of_rule_ids.sh .git/hooks/pre-commit
+----
+
+To generate a new unique (unused) Rule Id simply run `./new_rule_id.sh`.
