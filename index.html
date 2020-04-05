@@ -1344,7 +1344,14 @@ a > code { background-color: #f0f0f0; padding: .1em .4em .1em .4em !important; f
 <li><a href="#103"><span class="must-keyword"><strong>MUST</strong></span> write APIs using U.S. English</a></li>
 </ul>
 </li>
-<li><a href="#meta-information">4. Meta information</a>
+<li><a href="#api-design-review-process">4. API Design Review Process</a>
+<ul class="sectlevel2">
+<li><a href="#_why">Why</a></li>
+<li><a href="#_feedback">Feedback</a></li>
+<li><a href="#10001"><span class="should-keyword"><strong>SHOULD</strong></span> API Design Review Process</a></li>
+</ul>
+</li>
+<li><a href="#meta-information">5. Meta information</a>
 <ul class="sectlevel2">
 <li><a href="#218"><span class="must-keyword"><strong>MUST</strong></span> contain API meta information</a></li>
 <li><a href="#116"><span class="must-keyword"><strong>MUST</strong></span> use semantic versioning</a></li>
@@ -1352,14 +1359,14 @@ a > code { background-color: #f0f0f0; padding: .1em .4em .1em .4em !important; f
 <li><a href="#219"><span class="must-keyword"><strong>MUST</strong></span> provide API audience</a></li>
 </ul>
 </li>
-<li><a href="#security">5. Security</a>
+<li><a href="#security">6. Security</a>
 <ul class="sectlevel2">
 <li><a href="#104"><span class="must-keyword"><strong>MUST</strong></span> secure endpoints with OAuth 2.0</a></li>
 <li><a href="#105"><span class="must-keyword"><strong>MUST</strong></span> define and assign permissions (scopes)</a></li>
 <li><a href="#225"><span class="must-keyword"><strong>MUST</strong></span> follow naming convention for permissions (scopes)</a></li>
 </ul>
 </li>
-<li><a href="#compatibility">6. Compatibility</a>
+<li><a href="#compatibility">7. Compatibility</a>
 <ul class="sectlevel2">
 <li><a href="#106"><span class="must-keyword"><strong>MUST</strong></span> not break backward compatibility</a></li>
 <li><a href="#107"><span class="should-keyword"><strong>SHOULD</strong></span> prefer compatible extensions</a></li>
@@ -1373,7 +1380,7 @@ a > code { background-color: #f0f0f0; padding: .1em .4em .1em .4em !important; f
 <li><a href="#115"><span class="must-keyword"><strong>MUST</strong></span> not use URI versioning</a></li>
 </ul>
 </li>
-<li><a href="#deprecation">7. Deprecation</a>
+<li><a href="#deprecation">8. Deprecation</a>
 <ul class="sectlevel2">
 <li><a href="#185"><span class="must-keyword"><strong>MUST</strong></span> obtain approval of clients before API shut down</a></li>
 <li><a href="#186"><span class="must-keyword"><strong>MUST</strong></span> collect external partner consent on deprecation time span</a></li>
@@ -1384,7 +1391,7 @@ a > code { background-color: #f0f0f0; padding: .1em .4em .1em .4em !important; f
 <li><a href="#191"><span class="must-keyword"><strong>MUST</strong></span> not start using deprecated APIs</a></li>
 </ul>
 </li>
-<li><a href="#json-guidelines">8. JSON guidelines</a>
+<li><a href="#json-guidelines">9. JSON guidelines</a>
 <ul class="sectlevel2">
 <li><a href="#118"><span class="must-keyword"><strong>MUST</strong></span> property names must be ASCII snake_case (and never camelCase): <code>^[a-z_][a-z_0-9]*$</code></a></li>
 <li><a href="#240"><span class="must-keyword"><strong>MUST</strong></span> declare enum values using UPPER_SNAKE_CASE format</a></li>
@@ -1399,7 +1406,7 @@ a > code { background-color: #f0f0f0; padding: .1em .4em .1em .4em !important; f
 <li><a href="#127"><span class="should-keyword"><strong>SHOULD</strong></span> define time durations and intervals properties conform to ISO 8601</a></li>
 </ul>
 </li>
-<li><a href="#data-formats">9. Data formats</a>
+<li><a href="#data-formats">10. Data formats</a>
 <ul class="sectlevel2">
 <li><a href="#167"><span class="must-keyword"><strong>MUST</strong></span> use JSON to encode structured data</a></li>
 <li><a href="#168"><span class="may-keyword"><strong>MAY</strong></span> use non JSON media types for binary data or alternative content representations</a></li>
@@ -1410,13 +1417,13 @@ a > code { background-color: #f0f0f0; padding: .1em .4em .1em .4em !important; f
 <li><a href="#171"><span class="must-keyword"><strong>MUST</strong></span> define format for number and integer types</a></li>
 </ul>
 </li>
-<li><a href="#common-data-types">10. Common data types</a>
+<li><a href="#common-data-types">11. Common data types</a>
 <ul class="sectlevel2">
 <li><a href="#173"><span class="must-keyword"><strong>MUST</strong></span> use the common money object</a></li>
 <li><a href="#174"><span class="must-keyword"><strong>MUST</strong></span> use common field names and semantics</a></li>
 </ul>
 </li>
-<li><a href="#api-naming">11. API naming</a>
+<li><a href="#api-naming">12. API naming</a>
 <ul class="sectlevel2">
 <li><a href="#223"><span class="must-keyword"><strong>MUST</strong></span>/<span class="should-keyword"><strong>SHOULD</strong></span> use functional naming schema</a></li>
 <li><a href="#224"><span class="must-keyword"><strong>MUST</strong></span> follow naming convention for hostnames</a></li>
@@ -1429,7 +1436,7 @@ a > code { background-color: #f0f0f0; padding: .1em .4em .1em .4em !important; f
 <li><a href="#137"><span class="must-keyword"><strong>MUST</strong></span> stick to conventional query parameters</a></li>
 </ul>
 </li>
-<li><a href="#resources">12. Resources</a>
+<li><a href="#resources">13. Resources</a>
 <ul class="sectlevel2">
 <li><a href="#138"><span class="must-keyword"><strong>MUST</strong></span> avoid actions — think about resources</a></li>
 <li><a href="#139"><span class="should-keyword"><strong>SHOULD</strong></span> model complete business processes</a></li>
@@ -1445,7 +1452,7 @@ a > code { background-color: #f0f0f0; padding: .1em .4em .1em .4em !important; f
 <li><a href="#147"><span class="should-keyword"><strong>SHOULD</strong></span> limit number of sub-resource levels</a></li>
 </ul>
 </li>
-<li><a href="#http-requests">13. HTTP requests</a>
+<li><a href="#http-requests">14. HTTP requests</a>
 <ul class="sectlevel2">
 <li><a href="#148"><span class="must-keyword"><strong>MUST</strong></span> use HTTP methods correctly</a></li>
 <li><a href="#149"><span class="must-keyword"><strong>MUST</strong></span> fulfill common method properties</a></li>
@@ -1457,7 +1464,7 @@ a > code { background-color: #f0f0f0; padding: .1em .4em .1em .4em !important; f
 <li><a href="#226"><span class="must-keyword"><strong>MUST</strong></span> document implicit filtering</a></li>
 </ul>
 </li>
-<li><a href="#http-status-codes-and-errors">14. HTTP status codes and errors</a>
+<li><a href="#http-status-codes-and-errors">15. HTTP status codes and errors</a>
 <ul class="sectlevel2">
 <li><a href="#151"><span class="must-keyword"><strong>MUST</strong></span> specify success and error responses</a></li>
 <li><a href="#150"><span class="must-keyword"><strong>MUST</strong></span> use standard HTTP status codes</a></li>
@@ -1468,7 +1475,7 @@ a > code { background-color: #f0f0f0; padding: .1em .4em .1em .4em !important; f
 <li><a href="#177"><span class="must-keyword"><strong>MUST</strong></span> not expose stack traces</a></li>
 </ul>
 </li>
-<li><a href="#performance">15. Performance</a>
+<li><a href="#performance">16. Performance</a>
 <ul class="sectlevel2">
 <li><a href="#155"><span class="should-keyword"><strong>SHOULD</strong></span> reduce bandwidth needs and improve responsiveness</a></li>
 <li><a href="#156"><span class="should-keyword"><strong>SHOULD</strong></span> use <code>gzip</code> compression</a></li>
@@ -1477,14 +1484,14 @@ a > code { background-color: #f0f0f0; padding: .1em .4em .1em .4em !important; f
 <li><a href="#227"><span class="must-keyword"><strong>MUST</strong></span> document cachable <code>GET</code>, <code>HEAD</code>, and <code>POST</code> endpoints</a></li>
 </ul>
 </li>
-<li><a href="#pagination">16. Pagination</a>
+<li><a href="#pagination">17. Pagination</a>
 <ul class="sectlevel2">
 <li><a href="#159"><span class="must-keyword"><strong>MUST</strong></span> support pagination</a></li>
 <li><a href="#160"><span class="should-keyword"><strong>SHOULD</strong></span> prefer cursor-based pagination, avoid offset-based pagination</a></li>
 <li><a href="#161"><span class="should-keyword"><strong>SHOULD</strong></span> use pagination links where applicable</a></li>
 </ul>
 </li>
-<li><a href="#hypermedia">17. Hypermedia</a>
+<li><a href="#hypermedia">18. Hypermedia</a>
 <ul class="sectlevel2">
 <li><a href="#162"><span class="must-keyword"><strong>MUST</strong></span> use REST maturity level 2</a></li>
 <li><a href="#163"><span class="may-keyword"><strong>MAY</strong></span> use REST maturity level 3 - HATEOAS</a></li>
@@ -1494,7 +1501,7 @@ a > code { background-color: #f0f0f0; padding: .1em .4em .1em .4em !important; f
 <li><a href="#166"><span class="must-keyword"><strong>MUST</strong></span> not use link headers with JSON entities</a></li>
 </ul>
 </li>
-<li><a href="#common-headers">18. Common headers</a>
+<li><a href="#common-headers">19. Common headers</a>
 <ul class="sectlevel2">
 <li><a href="#178"><span class="must-keyword"><strong>MUST</strong></span> use <code>Content-*</code> headers correctly</a></li>
 <li><a href="#133"><span class="may-keyword"><strong>MAY</strong></span> use standardized headers</a></li>
@@ -1505,20 +1512,20 @@ a > code { background-color: #f0f0f0; padding: .1em .4em .1em .4em !important; f
 <li><a href="#230"><span class="may-keyword"><strong>MAY</strong></span> consider to support <code>Idempotency-Key</code> header</a></li>
 </ul>
 </li>
-<li><a href="#proprietary-headers">19. Proprietary headers</a>
+<li><a href="#proprietary-headers">20. Proprietary headers</a>
 <ul class="sectlevel2">
 <li><a href="#183"><span class="must-keyword"><strong>MUST</strong></span> use only the specified proprietary Zalando headers</a></li>
 <li><a href="#184"><span class="must-keyword"><strong>MUST</strong></span> propagate proprietary headers</a></li>
 <li><a href="#233"><span class="must-keyword"><strong>MUST</strong></span> support <code>X-Flow-ID</code></a></li>
 </ul>
 </li>
-<li><a href="#api-operation">20. API Operation</a>
+<li><a href="#api-operation">21. API Operation</a>
 <ul class="sectlevel2">
 <li><a href="#192"><span class="must-keyword"><strong>MUST</strong></span> publish Open API specification</a></li>
 <li><a href="#193"><span class="should-keyword"><strong>SHOULD</strong></span> monitor API usage</a></li>
 </ul>
 </li>
-<li><a href="#events">21. Events</a>
+<li><a href="#events">22. Events</a>
 <ul class="sectlevel2">
 <li><a href="#_events_event_types_and_categories">Events, event types, and categories</a></li>
 <li><a href="#194"><span class="must-keyword"><strong>MUST</strong></span> treat events as part of the service interface</a></li>
@@ -2024,7 +2031,66 @@ to include a link to the API user manual into the API specification using the
 </div>
 </div>
 <div class="sect1">
-<h2 id="meta-information"><a class="link" href="#meta-information">4. Meta information</a></h2>
+<h2 id="api-design-review-process"><a class="link" href="#api-design-review-process">4. API Design Review Process</a></h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_why"><a class="link" href="#_why">Why</a></h3>
+<div class="paragraph">
+<p>We believe in APIs. We are just at the beginning of our journey to an API driven company.
+There is no clear roadmap how to reach our goal. For sure it will be ways in which we stumble,
+sometimes fail but hopefully succeed in the end.</p>
+</div>
+<div class="paragraph">
+<p>There will be pros and cons how to handle and apply the style guide to real projects.
+There are many things to learn and to share with another. We have to keep improving the style guide,
+review process, and tools to capture our evolving knowledge and experience.</p>
+</div>
+<div class="paragraph">
+<p>To formalize the learning process we decided to establish the API Design Review Process.
+Each new or refactored API MUST be reviewed through this process.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_feedback"><a class="link" href="#_feedback">Feedback</a></h3>
+<div class="paragraph">
+<p>We have now done a couple of API design reviews. Please give us feedback how we can improve this process!</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="10001"><a class="link" href="#10001"><span class="should-keyword"><strong>SHOULD</strong></span> API Design Review Process</a></h3>
+<div class="paragraph">
+<p><strong>Who is responsible for scheduling the review?</strong>
+A representative of the project team that creates the service MUST contact the Architecture team.
+In most cases the representative is the API designer/architect.</p>
+</div>
+<div class="paragraph">
+<p><strong>How to plan the review?</strong>
+It is the responsibility of the team to plan their resources for the API review and to talk
+with the team leaders of Functional and Data Architecture to organize reviewers.
+Together they decide on the appropriate time box for the review.</p>
+</div>
+<div class="paragraph">
+<p><strong>Tooling</strong>
+Currently we are experimenting <a href="https://www.apicur.io/">APICURIO</a> for API review.</p>
+</div>
+<div class="paragraph">
+<p><strong>API description</strong>
+It is necessary to provide a formal description of the API to review it.
+The API designer has to provide an OPENAPI (or Swagger) description or an equivalent description.
+Providing a running system or a mock to work with the API is highly appreciated.</p>
+</div>
+<div class="paragraph">
+<p><strong>Reviewing the API</strong>
+It is up to the API designer and reviewer how to perform the review. It is a good idea to schedule a meeting
+and step through the API and talk with the reviewers about the functionality and intention.
+That&#8217;s a good way to cut down review times because questions and missunderstandings can be solved immediately.
+Others prefer to review the API without a formal meeting.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="meta-information"><a class="link" href="#meta-information">5. Meta information</a></h2>
 <div class="sectionbody">
 <div class="sect2">
 <h3 id="218"><a class="link" href="#218"><span class="must-keyword"><strong>MUST</strong></span> contain API meta information</a></h3>
@@ -2267,7 +2333,7 @@ API Audience narrative (internal link)</a>.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="security"><a class="link" href="#security">5. Security</a></h2>
+<h2 id="security"><a class="link" href="#security">6. Security</a></h2>
 <div class="sectionbody">
 <div class="sect2">
 <h3 id="104"><a class="link" href="#104"><span class="must-keyword"><strong>MUST</strong></span> secure endpoints with OAuth 2.0</a></h3>
@@ -2433,7 +2499,7 @@ permission names in APIs must conform to the following naming pattern:</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="compatibility"><a class="link" href="#compatibility">6. Compatibility</a></h2>
+<h2 id="compatibility"><a class="link" href="#compatibility">7. Compatibility</a></h2>
 <div class="sectionbody">
 <div class="sect2">
 <h3 id="106"><a class="link" href="#106"><span class="must-keyword"><strong>MUST</strong></span> not break backward compatibility</a></h3>
@@ -2841,7 +2907,7 @@ media type versioning and content negotiation (see above).</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="deprecation"><a class="link" href="#deprecation">7. Deprecation</a></h2>
+<h2 id="deprecation"><a class="link" href="#deprecation">8. Deprecation</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Sometimes it is necessary to phase out an API endpoint, an API version, or an
@@ -2962,7 +3028,7 @@ the deprecation info (see hint in <a href="#189"><span class="should-keyword"><s
 </div>
 </div>
 <div class="sect1">
-<h2 id="json-guidelines"><a class="link" href="#json-guidelines">8. JSON guidelines</a></h2>
+<h2 id="json-guidelines"><a class="link" href="#json-guidelines">9. JSON guidelines</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>These guidelines provides recommendations for defining JSON data at Zalando.
@@ -3261,7 +3327,7 @@ be strings formatted as recommended by <a href="https://en.wikipedia.org/wiki/IS
 </div>
 </div>
 <div class="sect1">
-<h2 id="data-formats"><a class="link" href="#data-formats">9. Data formats</a></h2>
+<h2 id="data-formats"><a class="link" href="#data-formats">10. Data formats</a></h2>
 <div class="sectionbody">
 <div class="sect2">
 <h3 id="167"><a class="link" href="#167"><span class="must-keyword"><strong>MUST</strong></span> use JSON to encode structured data</a></h3>
@@ -3667,7 +3733,7 @@ specific language types in Java will translate to <code>BigDecimal</code> for
 </div>
 </div>
 <div class="sect1">
-<h2 id="common-data-types"><a class="link" href="#common-data-types">10. Common data types</a></h2>
+<h2 id="common-data-types"><a class="link" href="#common-data-types">11. Common data types</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Definitions of data objects that are good candidates for wider usage:</p>
@@ -4115,7 +4181,7 @@ and address types when modeling users and their addresses).</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="api-naming"><a class="link" href="#api-naming">11. API naming</a></h2>
+<h2 id="api-naming"><a class="link" href="#api-naming">12. API naming</a></h2>
 <div class="sectionbody">
 <div class="sect2">
 <h3 id="223"><a class="link" href="#223"><span class="must-keyword"><strong>MUST</strong></span>/<span class="should-keyword"><strong>SHOULD</strong></span> use functional naming schema</a></h3>
@@ -4352,7 +4418,7 @@ a page. See <a href="#pagination">Pagination</a> section below.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="resources"><a class="link" href="#resources">12. Resources</a></h2>
+<h2 id="resources"><a class="link" href="#resources">13. Resources</a></h2>
 <div class="sectionbody">
 <div class="sect2">
 <h3 id="138"><a class="link" href="#138"><span class="must-keyword"><strong>MUST</strong></span> avoid actions — think about resources</a></h3>
@@ -4698,7 +4764,7 @@ than 2000 characters.)</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="http-requests"><a class="link" href="#http-requests">13. HTTP requests</a></h2>
+<h2 id="http-requests"><a class="link" href="#http-requests">14. HTTP requests</a></h2>
 <div class="sectionbody">
 <div class="sect2">
 <h3 id="148"><a class="link" href="#148"><span class="must-keyword"><strong>MUST</strong></span> use HTTP methods correctly</a></h3>
@@ -5614,7 +5680,7 @@ also with company <em>Bar</em>.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="http-status-codes-and-errors"><a class="link" href="#http-status-codes-and-errors">14. HTTP status codes and errors</a></h2>
+<h2 id="http-status-codes-and-errors"><a class="link" href="#http-status-codes-and-errors">15. HTTP status codes and errors</a></h2>
 <div class="sectionbody">
 <div class="sect2">
 <h3 id="151"><a class="link" href="#151"><span class="must-keyword"><strong>MUST</strong></span> specify success and error responses</a></h3>
@@ -6142,7 +6208,7 @@ receive and may disclose insights about vulnerabilities to attackers.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="performance"><a class="link" href="#performance">15. Performance</a></h2>
+<h2 id="performance"><a class="link" href="#performance">16. Performance</a></h2>
 <div class="sectionbody">
 <div class="sect2">
 <h3 id="155"><a class="link" href="#155"><span class="should-keyword"><strong>SHOULD</strong></span> reduce bandwidth needs and improve responsiveness</a></h3>
@@ -6511,7 +6577,7 @@ proxy cache.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="pagination"><a class="link" href="#pagination">16. Pagination</a></h2>
+<h2 id="pagination"><a class="link" href="#pagination">17. Pagination</a></h2>
 <div class="sectionbody">
 <div class="sect2">
 <h3 id="159"><a class="link" href="#159"><span class="must-keyword"><strong>MUST</strong></span> support pagination</a></h3>
@@ -6755,7 +6821,7 @@ the ability to support serving counts over the life of a service.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="hypermedia"><a class="link" href="#hypermedia">17. Hypermedia</a></h2>
+<h2 id="hypermedia"><a class="link" href="#hypermedia">18. Hypermedia</a></h2>
 <div class="sectionbody">
 <div class="sect2">
 <h3 id="162"><a class="link" href="#162"><span class="must-keyword"><strong>MUST</strong></span> use REST maturity level 2</a></h3>
@@ -6969,7 +7035,7 @@ As a result, the use of the <a href="https://tools.ietf.org/html/rfc8288#section
 </div>
 </div>
 <div class="sect1">
-<h2 id="common-headers"><a class="link" href="#common-headers">18. Common headers</a></h2>
+<h2 id="common-headers"><a class="link" href="#common-headers">19. Common headers</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>This section describes a handful of headers, which we found raised the most
@@ -7290,7 +7356,7 @@ common header.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="proprietary-headers"><a class="link" href="#proprietary-headers">19. Proprietary headers</a></h2>
+<h2 id="proprietary-headers"><a class="link" href="#proprietary-headers">20. Proprietary headers</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>This section shares definitions of proprietary headers that should be
@@ -7558,7 +7624,7 @@ DB solutions).</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="api-operation"><a class="link" href="#api-operation">20. API Operation</a></h2>
+<h2 id="api-operation"><a class="link" href="#api-operation">21. API Operation</a></h2>
 <div class="sectionbody">
 <div class="sect2">
 <h3 id="192"><a class="link" href="#192"><span class="must-keyword"><strong>MUST</strong></span> publish Open API specification</a></h3>
@@ -7605,7 +7671,7 @@ of the client-id retrieved from the OAuth token.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="events"><a class="link" href="#events">21. Events</a></h2>
+<h2 id="events"><a class="link" href="#events">22. Events</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Zalando’s architecture centers around decoupled microservices and in
@@ -9493,7 +9559,7 @@ header.prepend(nav);
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-04-05 19:14:59 UTC
+Last updated 2020-04-05 19:18:34 UTC
 </div>
 </div>
 <style>
