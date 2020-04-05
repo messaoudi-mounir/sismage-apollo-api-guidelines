@@ -1412,7 +1412,6 @@ a > code { background-color: #f0f0f0; padding: .1em .4em .1em .4em !important; f
 </li>
 <li><a href="#common-data-types">11. Common data types</a>
 <ul class="sectlevel2">
-<li><a href="#173"><span class="must-keyword"><strong>MUST</strong></span> use the common money object</a></li>
 <li><a href="#174"><span class="must-keyword"><strong>MUST</strong></span> use common field names and semantics</a></li>
 </ul>
 </li>
@@ -3418,154 +3417,6 @@ specific language types in Java will translate to <code>BigDecimal</code> for
 <div class="sectionbody">
 <div class="paragraph">
 <p>Definitions of data objects that are good candidates for wider usage:</p>
-</div>
-<div class="sect2">
-<h3 id="173"><a class="link" href="#173"><span class="must-keyword"><strong>MUST</strong></span> use the common money object</a></h3>
-<div class="paragraph">
-<p>Use the following common money structure:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="yaml"><span class="key">Money</span>:
-  <span class="key">type</span>: <span class="string"><span class="content">object</span></span>
-  <span class="key">properties</span>:
-    <span class="key">amount</span>:
-      <span class="key">type</span>: <span class="string"><span class="content">number</span></span>
-      <span class="key">description</span>: <span class="string"><span class="delimiter">&gt;</span><span class="content">
-        The amount describes unit and subunit of the currency in a single value,
-        where the integer part (digits before the decimal point) is for the
-        major unit and fractional part (digits after the decimal point) is for
-        the minor unit.</span></span>
-      <span class="key">format</span>: <span class="string"><span class="content">decimal</span></span>
-      <span class="key">example</span>: <span class="string"><span class="content">99.95</span></span>
-    <span class="key">currency</span>:
-      <span class="key">type</span>: <span class="string"><span class="content">string</span></span>
-      <span class="key">description</span>: <span class="string"><span class="content">3 letter currency code as defined by ISO-4217</span></span>
-      <span class="key">format</span>: <span class="string"><span class="content">iso-4217</span></span>
-      <span class="key">example</span>: <span class="string"><span class="content">EUR</span></span>
-  <span class="key">required</span>:
-    - <span class="string"><span class="content">amount</span></span>
-    - <span class="string"><span class="content">currency</span></span></code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>APIs are encouraged to include a reference to the global schema for Money.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="yaml"><span class="key">SalesOrder</span>:
-  <span class="key">properties</span>:
-    <span class="key">grand_total</span>:
-      <span class="error">$ref</span>: <span class="error">'https://opensource.zalando.com/restful-api-guidelines/money-1.0.0.yaml#/Money'</span></code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Please note that APIs have to treat Money as a closed data type, i.e. it&#8217;s not meant to be used in an inheritance hierarchy. That means the following usage is not allowed:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="json">{
-  <span class="key"><span class="delimiter">&quot;</span><span class="content">amount</span><span class="delimiter">&quot;</span></span>: <span class="float">19.99</span>,
-  <span class="key"><span class="delimiter">&quot;</span><span class="content">currency</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">EUR</span><span class="delimiter">&quot;</span></span>,
-  <span class="key"><span class="delimiter">&quot;</span><span class="content">discounted_amount</span><span class="delimiter">&quot;</span></span>: <span class="float">9.99</span>
-}</code></pre>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_cons"><a class="link" href="#_cons">Cons</a></h4>
-<div class="ulist">
-<ul>
-<li>
-<p>Violates the <a href="https://en.wikipedia.org/wiki/Liskov_substitution_principle">Liskov Substitution Principle</a></p>
-</li>
-<li>
-<p>Breaks existing library support, e.g. <a href="https://github.com/zalando/jackson-datatype-money">Jackson Datatype Money</a></p>
-</li>
-<li>
-<p>Less flexible since both amounts are coupled together, e.g. mixed currencies are impossible</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>A better approach is to favor <a href="https://en.wikipedia.org/wiki/Composition_over_inheritance">composition over inheritance</a>:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="json">{
-    <span class="key"><span class="delimiter">&quot;</span><span class="content">price</span><span class="delimiter">&quot;</span></span>: {
-      <span class="key"><span class="delimiter">&quot;</span><span class="content">amount</span><span class="delimiter">&quot;</span></span>: <span class="float">19.99</span>,
-      <span class="key"><span class="delimiter">&quot;</span><span class="content">currency</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">EUR</span><span class="delimiter">&quot;</span></span>
-    },
-    <span class="key"><span class="delimiter">&quot;</span><span class="content">discounted_price</span><span class="delimiter">&quot;</span></span>: {
-      <span class="key"><span class="delimiter">&quot;</span><span class="content">amount</span><span class="delimiter">&quot;</span></span>: <span class="float">9.99</span>,
-      <span class="key"><span class="delimiter">&quot;</span><span class="content">currency</span><span class="delimiter">&quot;</span></span>: <span class="string"><span class="delimiter">&quot;</span><span class="content">EUR</span><span class="delimiter">&quot;</span></span>
-    }
-}</code></pre>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_pros"><a class="link" href="#_pros">Pros</a></h4>
-<div class="ulist">
-<ul>
-<li>
-<p>No inheritance, hence no issue with the substitution principle</p>
-</li>
-<li>
-<p>Makes use of existing library support</p>
-</li>
-<li>
-<p>No coupling, i.e. mixed currencies is an option</p>
-</li>
-<li>
-<p>Prices are now self-describing, atomic values</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_notes"><a class="link" href="#_notes">Notes</a></h4>
-<div class="paragraph">
-<p>Please be aware that some business cases (e.g. transactions in Bitcoin) call for a higher precision, so applications must be prepared to accept values with unlimited precision, unless explicitly stated otherwise in the API specification.</p>
-</div>
-<div class="paragraph">
-<p>Examples for correct representations (in EUR):</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code>42.20</code> or <code>42.2</code> = 42 Euros, 20 Cent</p>
-</li>
-<li>
-<p><code>0.23</code> = 23 Cent</p>
-</li>
-<li>
-<p><code>42.0</code> or <code>42</code> = 42 Euros</p>
-</li>
-<li>
-<p><code>1024.42</code> = 1024 Euros, 42 Cent</p>
-</li>
-<li>
-<p><code>1024.4225</code> = 1024 Euros, 42.25 Cent</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Make sure that you don’t convert the "amount" field to <code>float</code> /
-<code>double</code> types when implementing this interface in a specific language
-or when doing calculations. Otherwise, you might lose precision.
-Instead, use exact formats like Java’s
-<a href="https://docs.oracle.com/javase/8/docs/api/java/math/BigDecimal.html"><code>BigDecimal</code></a>.
-See <a href="http://stackoverflow.com/a/3730040/342852">Stack Overflow</a> for more
-info.</p>
-</div>
-<div class="paragraph">
-<p>Some JSON parsers (NodeJS’s, for example) convert numbers to floats by default.
-After discussing the pros and cons we’ve decided on "decimal" as our amount
-format. It is not a standard Open API format, but should help us to avoid parsing
-numbers as float / doubles.</p>
-</div>
-</div>
 </div>
 <div class="sect2">
 <h3 id="174"><a class="link" href="#174"><span class="must-keyword"><strong>MUST</strong></span> use common field names and semantics</a></h3>
@@ -8808,7 +8659,7 @@ additional request is necessary.</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_pros_2"><a class="link" href="#_pros_2">Pros</a></h5>
+<h5 id="_pros"><a class="link" href="#_pros">Pros</a></h5>
 <div class="ulist">
 <ul>
 <li>
@@ -8818,7 +8669,7 @@ additional request is necessary.</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_cons_2"><a class="link" href="#_cons_2">Cons</a></h5>
+<h5 id="_cons"><a class="link" href="#_cons">Cons</a></h5>
 <div class="ulist">
 <ul>
 <li>
@@ -8870,7 +8721,7 @@ in the <a href="#put"><code>PUT</code></a> request payload.</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_pros_3"><a class="link" href="#_pros_3">Pros</a></h5>
+<h5 id="_pros_2"><a class="link" href="#_pros_2">Pros</a></h5>
 <div class="ulist">
 <ul>
 <li>
@@ -8880,7 +8731,7 @@ in the <a href="#put"><code>PUT</code></a> request payload.</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_cons_3"><a class="link" href="#_cons_3">Cons</a></h5>
+<h5 id="_cons_2"><a class="link" href="#_cons_2">Cons</a></h5>
 <div class="ulist">
 <ul>
 <li>
@@ -8940,7 +8791,7 @@ database is higher than the one given in the request body:</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_pros_4"><a class="link" href="#_pros_4">Pros</a></h5>
+<h5 id="_pros_3"><a class="link" href="#_pros_3">Pros</a></h5>
 <div class="ulist">
 <ul>
 <li>
@@ -8950,7 +8801,7 @@ database is higher than the one given in the request body:</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_cons_4"><a class="link" href="#_cons_4">Cons</a></h5>
+<h5 id="_cons_3"><a class="link" href="#_cons_3">Cons</a></h5>
 <div class="ulist">
 <ul>
 <li>
@@ -9015,7 +8866,7 @@ later than the given date:</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_pros_5"><a class="link" href="#_pros_5">Pros</a></h5>
+<h5 id="_pros_4"><a class="link" href="#_pros_4">Pros</a></h5>
 <div class="ulist">
 <ul>
 <li>
@@ -9036,7 +8887,7 @@ result</p>
 </div>
 </div>
 <div class="sect4">
-<h5 id="_cons_5"><a class="link" href="#_cons_5">Cons</a></h5>
+<h5 id="_cons_4"><a class="link" href="#_cons_4">Cons</a></h5>
 <div class="ulist">
 <ul>
 <li>
@@ -9240,7 +9091,7 @@ header.prepend(nav);
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-04-05 20:39:45 UTC
+Last updated 2020-04-05 20:44:40 UTC
 </div>
 </div>
 <style>
