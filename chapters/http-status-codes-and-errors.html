@@ -691,7 +691,7 @@ make sure that the "lost update problem" is avoided (see <a href="#181">[181]</a
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a id="status-code-429"></a>{429}</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Too many requests - the client does not consider rate limiting and sent too
-many requests (see <a href="#153">{MUST} use code 429 with headers for rate limits</a>).</p></td>
+many requests (see <a href="#153">{SHOULD} use code 429 with headers for rate limits</a>).</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">{ALL}</p></td>
 </tr>
 </tbody>
@@ -830,7 +830,7 @@ response processing this distinction normally does not matter.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="153">{MUST} use code 429 with headers for rate limits</h2>
+<h2 id="153">{SHOULD} use code 429 with headers for rate limits</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>APIs that wish to manage the request rate of clients must use the {429} (Too
@@ -968,7 +968,7 @@ APIs should accept both media types.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="177">{MUST} not expose stack traces</h2>
+<h2 id="177">{SHOULD} not expose stack traces</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Stack traces contain implementation details that are not part of an API,
@@ -981,7 +981,7 @@ receive and may disclose insights about vulnerabilities to attackers.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-04-05 21:04:33 UTC
+Last updated 2020-04-05 21:05:49 UTC
 </div>
 </div>
 </body>

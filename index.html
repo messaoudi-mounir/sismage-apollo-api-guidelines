@@ -1463,9 +1463,9 @@ a > code { background-color: #f0f0f0; padding: .1em .4em .1em .4em !important; f
 <li><a href="#150"><span class="must-keyword"><strong>MUST</strong></span> use standard HTTP status codes</a></li>
 <li><a href="#220"><span class="may-keyword"><strong>MAY</strong></span> use most specific HTTP status codes</a></li>
 <li><a href="#152"><span class="should-keyword"><strong>SHOULD</strong></span> use code 207 for batch or bulk requests</a></li>
-<li><a href="#153"><span class="must-keyword"><strong>MUST</strong></span> use code 429 with headers for rate limits</a></li>
+<li><a href="#153"><span class="should-keyword"><strong>SHOULD</strong></span> use code 429 with headers for rate limits</a></li>
 <li><a href="#176"><span class="must-keyword"><strong>MUST</strong></span> use problem JSON</a></li>
-<li><a href="#177"><span class="must-keyword"><strong>MUST</strong></span> not expose stack traces</a></li>
+<li><a href="#177"><span class="should-keyword"><strong>SHOULD</strong></span> not expose stack traces</a></li>
 </ul>
 </li>
 <li><a href="#performance">16. Performance</a>
@@ -5460,7 +5460,7 @@ make sure that the "lost update problem" is avoided (see <a href="#181"><span cl
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a id="status-code-429"></a><a href="#status-code-429" class="status-code">429</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Too many requests - the client does not consider rate limiting and sent too
-many requests (see <a href="#153"><span class="must-keyword"><strong>MUST</strong></span> use code 429 with headers for rate limits</a>).</p></td>
+many requests (see <a href="#153"><span class="should-keyword"><strong>SHOULD</strong></span> use code 429 with headers for rate limits</a>).</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>&lt;all&gt;</code></p></td>
 </tr>
 </tbody>
@@ -5594,7 +5594,7 @@ response processing this distinction normally does not matter.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="153"><a class="link" href="#153"><span class="must-keyword"><strong>MUST</strong></span> use code 429 with headers for rate limits</a></h3>
+<h3 id="153"><a class="link" href="#153"><span class="should-keyword"><strong>SHOULD</strong></span> use code 429 with headers for rate limits</a></h3>
 <div class="paragraph">
 <p>APIs that wish to manage the request rate of clients must use the <a href="#status-code-429" class="status-code">429</a> (Too
 Many Requests) response code, if the client exceeded the request rate (see
@@ -5728,7 +5728,7 @@ APIs should accept both media types.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="177"><a class="link" href="#177"><span class="must-keyword"><strong>MUST</strong></span> not expose stack traces</a></h3>
+<h3 id="177"><a class="link" href="#177"><span class="should-keyword"><strong>SHOULD</strong></span> not expose stack traces</a></h3>
 <div class="paragraph">
 <p>Stack traces contain implementation details that are not part of an API,
 and on which clients should never rely. Moreover, stack traces can leak
@@ -7018,7 +7018,7 @@ disables it in the settings for respective mobile platform.</p></td>
 </table>
 <div class="paragraph">
 <p><strong>Exception:</strong> The only exception to this guideline are the conventional
-hop-by-hop <code>X-RateLimit-</code> headers which can be used as defined in <a href="#153"><span class="must-keyword"><strong>MUST</strong></span> use code 429 with headers for rate limits</a>.</p>
+hop-by-hop <code>X-RateLimit-</code> headers which can be used as defined in <a href="#153"><span class="should-keyword"><strong>SHOULD</strong></span> use code 429 with headers for rate limits</a>.</p>
 </div>
 </div>
 <div class="sect2">
@@ -9090,7 +9090,7 @@ header.prepend(nav);
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-04-05 21:04:33 UTC
+Last updated 2020-04-05 21:05:49 UTC
 </div>
 </div>
 <style>
