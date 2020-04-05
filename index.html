@@ -1368,8 +1368,6 @@ a > code { background-color: #f0f0f0; padding: .1em .4em .1em .4em !important; f
 <ul class="sectlevel2">
 <li><a href="#106"><span class="should-keyword"><strong>SHOULD</strong></span> not break backward compatibility</a></li>
 <li><a href="#107"><span class="should-keyword"><strong>SHOULD</strong></span> prefer compatible extensions</a></li>
-<li><a href="#108"><span class="must-keyword"><strong>MUST</strong></span> prepare clients accept compatible API extensions</a></li>
-<li><a href="#109"><span class="should-keyword"><strong>SHOULD</strong></span> design APIs conservatively</a></li>
 <li><a href="#110"><span class="must-keyword"><strong>MUST</strong></span> always return JSON objects as top-level data structures</a></li>
 <li><a href="#111"><span class="must-keyword"><strong>MUST</strong></span> treat Open API specification as open for extension by default</a></li>
 <li><a href="#112"><span class="should-keyword"><strong>SHOULD</strong></span> used open-ended list of values (<code>x-extensible-enum</code>) for enumerations</a></li>
@@ -2457,7 +2455,7 @@ consumers that cannot be broken via unilateral decisions.</p>
 <div class="paragraph">
 <p>We strongly encourage using compatible API extensions and discourage versioning
 (see <a href="#113"><span class="should-keyword"><strong>SHOULD</strong></span> avoid versioning</a> and <a href="#114"><span class="must-keyword"><strong>MUST</strong></span> use media type versioning</a> below). The following guidelines for service providers
-(<a href="#107"><span class="should-keyword"><strong>SHOULD</strong></span> prefer compatible extensions</a>) and consumers (<a href="#108"><span class="must-keyword"><strong>MUST</strong></span> prepare clients accept compatible API extensions</a>) enable us (having Postel’s Law in mind) to
+(<a href="#107"><span class="should-keyword"><strong>SHOULD</strong></span> prefer compatible extensions</a>) and consumers (<a href="#108">[108]</a>) enable us (having Postel’s Law in mind) to
 make compatible changes without versioning.</p>
 </div>
 <div class="paragraph">
@@ -2516,117 +2514,6 @@ values and clients must be agnostic to new values.</p>
 <p>Support redirection in case an URL has to change <a href="#status-code-301" class="status-code">301</a> (Moved Permanently).</p>
 </li>
 </ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="108"><a class="link" href="#108"><span class="must-keyword"><strong>MUST</strong></span> prepare clients accept compatible API extensions</a></h3>
-<div class="paragraph">
-<p>Service clients should apply the robustness principle:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Be conservative with API requests and data passed as input, e.g. avoid to
-exploit definition deficits like passing megabytes of strings with
-unspecified maximum length.</p>
-</li>
-<li>
-<p>Be tolerant in processing and reading data of API responses, more
-specifically&#8230;&#8203;</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Service clients must be prepared for compatible API extensions of service
-providers:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Be tolerant with unknown fields in the payload (see also Fowler’s
-<a href="http://martinfowler.com/bliki/TolerantReader.html">"TolerantReader"</a> post),
-i.e. ignore new fields but do not eliminate them from payload if needed for
-subsequent <a href="#put"><code>PUT</code></a> requests.</p>
-</li>
-<li>
-<p>Be prepared that <a href="#112"><code>x-extensible-enum</code></a> return parameter may deliver new values;
-either be agnostic or provide default behavior for unknown values.</p>
-</li>
-<li>
-<p>Be prepared to handle HTTP status codes not explicitly specified in endpoint
-definitions. Note also, that status codes are extensible. Default handling is
-how you would treat the corresponding <a href="#http-status-codes-and-errors" class="status-code">2xx</a> code (see
-<a href="https://tools.ietf.org/html/rfc7231#section-6">RFC 7231 Section 6</a>).</p>
-</li>
-<li>
-<p>Follow the redirect when the server returns HTTP status code <a href="#status-code-301" class="status-code">301</a> (Moved
-Permanently).</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="109"><a class="link" href="#109"><span class="should-keyword"><strong>SHOULD</strong></span> design APIs conservatively</a></h3>
-<div class="paragraph">
-<p>Designers of service provider APIs should be conservative and accurate in what
-they accept from clients:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Unknown input fields in payload or URL should not be ignored; servers should
-provide error feedback to clients via an HTTP 400 response code.</p>
-</li>
-<li>
-<p>Be accurate in defining input data constraints (like formats, ranges, lengths
-etc.) — and check constraints and return dedicated error information in case
-of violations.</p>
-</li>
-<li>
-<p>Prefer being more specific and restrictive (if compliant to functional
-requirements), e.g. by defining length range of strings. It may simplify
-implementation while providing freedom for further evolution as compatible
-extensions.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>Not ignoring unknown input fields is a specific deviation from Postel&#8217;s Law
-(e.g. see also<br>
-<a href="https://cacm.acm.org/magazines/2011/8/114933-the-robustness-principle-reconsidered/fulltext">The
-Robustness Principle Reconsidered</a>) and a strong recommendation. Servers might
-want to take different approach but should be aware of the following problems
-and be explicit in what is supported:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>Ignoring unknown input fields is actually not an option for <a href="#put"><code>PUT</code></a>, since it
-becomes asymmetric with subsequent <a href="#get"><code>GET</code></a> response and HTTP is clear about the
-<a href="#put"><code>PUT</code></a> <em>replace</em> semantics and default roundtrip expectations (see
-<a href="https://tools.ietf.org/html/rfc7231#section-4.3.4">RFC 7231 Section 4.3.4</a>). Note, accepting (i.e. not
-ignoring) unknown input fields and returning it in subsequent <a href="#get"><code>GET</code></a> responses
-is a different situation and compliant to <a href="#put"><code>PUT</code></a> semantics.</p>
-</li>
-<li>
-<p>Certain client errors cannot be recognized by servers, e.g. attribute name
-typing errors will be ignored without server error feedback. The server
-cannot differentiate between the client intentionally providing an additional
-field versus the client sending a mistakenly named field, when the client&#8217;s
-actual intent was to provide an optional input field.</p>
-</li>
-<li>
-<p>Future extensions of the input data structure might be in conflict with
-already ignored fields and, hence, will not be compatible, i.e. break clients
-that already use this field but with different type.</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>In specific situations, where a (known) input field is not needed anymore, it
-either can stay in the API definition with "not used anymore" description or
-can be removed from the API definition as long as the server ignores this
-specific parameter.</p>
 </div>
 </div>
 <div class="sect2">
@@ -9491,7 +9378,7 @@ header.prepend(nav);
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-04-05 20:18:22 UTC
+Last updated 2020-04-05 20:20:03 UTC
 </div>
 </div>
 <style>
