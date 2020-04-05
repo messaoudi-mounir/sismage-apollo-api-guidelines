@@ -1462,7 +1462,7 @@ a > code { background-color: #f0f0f0; padding: .1em .4em .1em .4em !important; f
 <li><a href="#151"><span class="must-keyword"><strong>MUST</strong></span> specify success and error responses</a></li>
 <li><a href="#150"><span class="must-keyword"><strong>MUST</strong></span> use standard HTTP status codes</a></li>
 <li><a href="#220"><span class="may-keyword"><strong>MAY</strong></span> use most specific HTTP status codes</a></li>
-<li><a href="#152"><span class="must-keyword"><strong>MUST</strong></span> use code 207 for batch or bulk requests</a></li>
+<li><a href="#152"><span class="should-keyword"><strong>SHOULD</strong></span> use code 207 for batch or bulk requests</a></li>
 <li><a href="#153"><span class="must-keyword"><strong>MUST</strong></span> use code 429 with headers for rate limits</a></li>
 <li><a href="#176"><span class="must-keyword"><strong>MUST</strong></span> use problem JSON</a></li>
 <li><a href="#177"><span class="must-keyword"><strong>MUST</strong></span> not expose stack traces</a></li>
@@ -5325,7 +5325,7 @@ with the Location header. (More details found in the <a href="#common-headers">C
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a id="status-code-207"></a><a href="#status-code-207" class="status-code">207</a></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Multi-Status - The response body contains multiple status informations for
-different parts of a batch/bulk request (see <a href="#152"><span class="must-keyword"><strong>MUST</strong></span> use code 207 for batch or bulk requests</a>).</p></td>
+different parts of a batch/bulk request (see <a href="#152"><span class="should-keyword"><strong>SHOULD</strong></span> use code 207 for batch or bulk requests</a>).</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#post"><code>POST</code></a></p></td>
 </tr>
 </tbody>
@@ -5514,7 +5514,7 @@ about your request processing status or error situations.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="152"><a class="link" href="#152"><span class="must-keyword"><strong>MUST</strong></span> use code 207 for batch or bulk requests</a></h3>
+<h3 id="152"><a class="link" href="#152"><span class="should-keyword"><strong>SHOULD</strong></span> use code 207 for batch or bulk requests</a></h3>
 <div class="paragraph">
 <p>Some APIs are required to provide either <em>batch</em> or <em>bulk</em> requests using
 <a href="#post"><code>POST</code></a> for performance reasons, i.e. for communication and processing
@@ -9090,7 +9090,7 @@ header.prepend(nav);
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-04-05 21:03:35 UTC
+Last updated 2020-04-05 21:04:33 UTC
 </div>
 </div>
 <style>
