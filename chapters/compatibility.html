@@ -465,7 +465,7 @@ consumers that cannot be broken via unilateral decisions.</p>
 </div>
 <div class="paragraph">
 <p>We strongly encourage using compatible API extensions and discourage versioning
-(see <a href="#113">{SHOULD} avoid versioning</a> and <a href="#114">{MUST} use media type versioning</a> below). The following guidelines for service providers
+(see <a href="#113">[113]</a> and <a href="#114">[114]</a> below). The following guidelines for service providers
 (<a href="#107">{SHOULD} prefer compatible extensions</a>) and consumers (<a href="#108">[108]</a>) enable us (having Postel’s Law in mind) to
 make compatible changes without versioning.</p>
 </div>
@@ -547,7 +547,7 @@ level data structures, since they don&#8217;t support compatible, future extensi
 </div>
 </div>
 <div class="sect1">
-<h2 id="111">{MUST} treat Open API specification as open for extension by default</h2>
+<h2 id="111">{SHOULD} treat Open API specification as open for extension by default</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The Open API 2.0 specification is not very specific on default extensibility
@@ -635,124 +635,10 @@ most tools.</p>
 </div>
 </div>
 </div>
-<div class="sect1">
-<h2 id="113">{SHOULD} avoid versioning</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>When changing your RESTful APIs, do so in a compatible way and avoid generating
-additional API versions. Multiple versions can significantly complicate
-understanding, testing, maintaining, evolving, operating and releasing our
-systems
-(<a href="http://martinfowler.com/articles/enterpriseREST.html">supplementary
-reading</a>).</p>
-</div>
-<div class="paragraph">
-<p>If changing an API can’t be done in a compatible way, then proceed in one of
-these three ways:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>create a new resource (variant) in addition to the old resource variant</p>
-</li>
-<li>
-<p>create a new service endpoint — i.e. a new application with a new API (with a
-new domain name)</p>
-</li>
-<li>
-<p>create a new API version supported in parallel with the old API by the same
-microservice</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>As we discourage versioning by all means because of the manifold disadvantages,
-we strongly recommend to only use the first two approaches.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="114">{MUST} use media type versioning</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>However, when API versioning is unavoidable, you have to design your
-multi-version RESTful APIs using media type versioning (instead of URI
-versioning, see below). Media type versioning is less tightly coupled since
-it supports content negotiation and hence reduces complexity of release
-management.</p>
-</div>
-<div class="paragraph">
-<p>Media type versioning: Here, version information and media type are provided
-together via the HTTP Content-Type header — e.g.
-<code>application/x.zalando.cart+json;version=2</code>. For incompatible changes, a new
-media type version for the resource is created. To generate the new
-representation version, consumer and producer can do content negotiation using
-the HTTP Content-Type and Accept headers. Note: This versioning only applies to
-the request and response content schema, not to URI or method semantics.</p>
-</div>
-<div class="paragraph">
-<p>In this example, a client wants only the new version of the response:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-http" data-lang="http">Accept: application/x.zalando.cart+json;version=2</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>A server responding to this, as well as a client sending a request with content
-should use the Content-Type header, declaring that one is sending the new
-version:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="highlight"><code class="language-http" data-lang="http">Content-Type: application/x.zalando.cart+json;version=2</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Using header versioning should:</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>include versions in request and response headers to increase visibility</p>
-</li>
-<li>
-<p>include Content-Type in the Vary header to enable proxy caches to differ
-between versions</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p><strong>Hint:</strong> Until an incompatible change is necessary, it is recommended to stay
-with the standard <code>application/json</code> media type.</p>
-</div>
-<div class="paragraph">
-<p>Further reading:
-<a href="https://blog.apisyouwonthate.com/api-versioning-has-no-right-way-f3c75457c0b7">API
-Versioning Has No "Right Way"</a> provides an overview on different versioning
-approaches to handle breaking changes without being opinionated.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="115">{MUST} not use URI versioning</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>With URI versioning a (major) version number is included in the path, e.g.
-<code>/v1/customers</code>. The consumer has to wait until the provider has been released
-and deployed. If the consumer also supports hypermedia links — even in their
-APIs — to drive workflows (HATEOAS), this quickly becomes complex. So does
-coordinating version upgrades — especially with hyperlinked service
-dependencies — when using URL versioning. To avoid this tighter coupling and
-complexer release management we do not use URI versioning, and go instead with
-media type versioning and content negotiation (see above).</p>
-</div>
-</div>
-</div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-04-05 20:20:03 UTC
+Last updated 2020-04-05 20:25:24 UTC
 </div>
 </div>
 </body>
