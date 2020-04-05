@@ -1339,7 +1339,6 @@ a > code { background-color: #f0f0f0; padding: .1em .4em .1em .4em !important; f
 <ul class="sectlevel2">
 <li><a href="#100"><span class="must-keyword"><strong>MUST</strong></span> follow API first principle</a></li>
 <li><a href="#101"><span class="must-keyword"><strong>MUST</strong></span> provide API specification using Open API</a></li>
-<li><a href="#234"><span class="must-keyword"><strong>MUST</strong></span> only use durable and immutable remote references</a></li>
 <li><a href="#102"><span class="should-keyword"><strong>SHOULD</strong></span> provide API user manual</a></li>
 <li><a href="#103"><span class="must-keyword"><strong>MUST</strong></span> write APIs using U.S. English</a></li>
 </ul>
@@ -1946,50 +1945,6 @@ our <a href="https://plugins.jetbrains.com/search?search=swagger+Monte">Swagger 
 for IntelliJ IDEA</a> to create your first API. To explore and validate/evaluate
 existing APIs the <a href="https://editor.swagger.io/">Swagger Editor</a> or our
 <a href="https://apis.zalando.net">API Portal</a> may be a good starting point.</p>
-</div>
-<div class="paragraph">
-<p><strong>Hint:</strong> We do not yet provide guidelines for <a href="https://graphql.org/">GraphQL</a>.
-Following our <a href="https://techradar.zalando.net/languages/graphql.html">Zalando
-Tech Radar [internal link</a>], we focus on resource oriented HTTP/REST API style
-(and related tooling and infrastructure support) for general purpose
-peer-to-peer microservice communication. Here, we think that GraphQL has no
-major benefits, but a couple of downsides compared to REST. However, GraphQL
-can provide a lot of value for specific target domain problems, especially
-backends for frontends (BFF) and mobile clients, and here we already make use
-of GraphQL as API technology for our DX Interface Framework.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="234"><a class="link" href="#234"><span class="must-keyword"><strong>MUST</strong></span> only use durable and immutable remote references</a></h3>
-<div class="paragraph">
-<p>Normally, API specification files must be <strong>self-contained</strong>, i.e. files
-should not contain references to local or remote content, e.g. <code>../fragment.yaml#/element</code> or
-<code>$ref: 'https://github.com/zalando/zally/blob/master/server/src/main/resources/api/zally-api.yaml#/schemas/LintingRequest'</code>.
-The reason is, that the content referred to is <em>in general</em> <strong>not durable</strong> and
-<strong>not immutable</strong>. As a consequence, the semantic of an API may change in
-unexpected ways.</p>
-</div>
-<div class="paragraph">
-<p>However, you may use remote references to resources accessible by the following
-service URLs.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code><a href="https://infrastructure-api-repository.zalandoapis.com/" class="bare">https://infrastructure-api-repository.zalandoapis.com/</a></code> (internal repository of APIs)</p>
-</li>
-<li>
-<p><code><a href="https://opensource.zalando.com/problem/" class="bare">https://opensource.zalando.com/problem/</a></code> (see <a href="#176"><span class="must-keyword"><strong>MUST</strong></span> use problem JSON</a>)</p>
-</li>
-<li>
-<p><code><a href="https://zalando.github.io/problem/" class="bare">https://zalando.github.io/problem/</a></code> (deprecated alias for <a href="#176"><span class="must-keyword"><strong>MUST</strong></span> use problem JSON</a>)</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>As we control these URLs, we ensure that their content is <strong>durable</strong> and
-<strong>immutable</strong>. This allows to define API specifications by using fragments
-published via this sources, as suggested in <a href="#151"><span class="must-keyword"><strong>MUST</strong></span> specify success and error responses</a>.</p>
 </div>
 </div>
 <div class="sect2">
@@ -5705,7 +5660,7 @@ especially if they are not under control of the service provider. Thus unless
 a response code conveys application-specific functional semantics or is used
 in a none standard way that requires additional explanation, multiple error
 response specifications can be combined using the following pattern
-(see also <a href="#234"><span class="must-keyword"><strong>MUST</strong></span> only use durable and immutable remote references</a>):</p>
+(see also <a href="#234">[234]</a>):</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -7642,7 +7597,7 @@ to profit from the API management infrastructure.</p>
 <p>An API is published by copying its <strong>Open API specification</strong> into the reserved
 <strong>/zalando-apis</strong> directory of the <strong>deployment artifact</strong> used to deploy the
 provisioning service. The directory must only contain <strong>self-contained YAML</strong>
-<strong>files</strong> that each describe one API (exception see <a href="#234"><span class="must-keyword"><strong>MUST</strong></span> only use durable and immutable remote references</a>). We prefer this
+<strong>files</strong> that each describe one API (exception see <a href="#234">[234]</a>). We prefer this
 deployment artifact-based method over the past (now legacy)
 <code>.well-known/schema-discovery</code> service endpoint-based publishing process, that
 we only support for backward compatibility reasons.</p>
@@ -9563,7 +9518,7 @@ header.prepend(nav);
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-04-05 19:23:13 UTC
+Last updated 2020-04-05 19:31:50 UTC
 </div>
 </div>
 <style>

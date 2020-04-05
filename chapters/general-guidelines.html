@@ -504,52 +504,6 @@ for IntelliJ IDEA</a> to create your first API. To explore and validate/evaluate
 existing APIs the <a href="https://editor.swagger.io/">Swagger Editor</a> or our
 <a href="https://apis.zalando.net">API Portal</a> may be a good starting point.</p>
 </div>
-<div class="paragraph">
-<p><strong>Hint:</strong> We do not yet provide guidelines for <a href="https://graphql.org/">GraphQL</a>.
-Following our <a href="https://techradar.zalando.net/languages/graphql.html">Zalando
-Tech Radar [internal link</a>], we focus on resource oriented HTTP/REST API style
-(and related tooling and infrastructure support) for general purpose
-peer-to-peer microservice communication. Here, we think that GraphQL has no
-major benefits, but a couple of downsides compared to REST. However, GraphQL
-can provide a lot of value for specific target domain problems, especially
-backends for frontends (BFF) and mobile clients, and here we already make use
-of GraphQL as API technology for our DX Interface Framework.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="234">{MUST} only use durable and immutable remote references</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Normally, API specification files must be <strong>self-contained</strong>, i.e. files
-should not contain references to local or remote content, e.g. <code>../fragment.yaml#/element</code> or
-<code>$ref: 'https://github.com/zalando/zally/blob/master/server/src/main/resources/api/zally-api.yaml#/schemas/LintingRequest'</code>.
-The reason is, that the content referred to is <em>in general</em> <strong>not durable</strong> and
-<strong>not immutable</strong>. As a consequence, the semantic of an API may change in
-unexpected ways.</p>
-</div>
-<div class="paragraph">
-<p>However, you may use remote references to resources accessible by the following
-service URLs.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><code><a href="https://infrastructure-api-repository.zalandoapis.com/" class="bare">https://infrastructure-api-repository.zalandoapis.com/</a></code> (internal repository of APIs)</p>
-</li>
-<li>
-<p><code><a href="https://opensource.zalando.com/problem/" class="bare">https://opensource.zalando.com/problem/</a></code> (see <a href="#176">[176]</a>)</p>
-</li>
-<li>
-<p><code><a href="https://zalando.github.io/problem/" class="bare">https://zalando.github.io/problem/</a></code> (deprecated alias for <a href="#176">[176]</a>)</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>As we control these URLs, we ensure that their content is <strong>durable</strong> and
-<strong>immutable</strong>. This allows to define API specifications by using fragments
-published via this sources, as suggested in <a href="#151">[151]</a>.</p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -595,7 +549,7 @@ to include a link to the API user manual into the API specification using the
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-04-05 19:23:13 UTC
+Last updated 2020-04-05 19:31:50 UTC
 </div>
 </div>
 </body>
