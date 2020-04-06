@@ -450,27 +450,6 @@ APIs. While this is optional for internal APIs, i.e. APIs marked with the
 <strong>component-internal</strong> <a href="#219">API audience</a> group, we still recommend to do so
 to profit from the API management infrastructure.</p>
 </div>
-<div class="paragraph">
-<p>An API is published by copying its <strong>Open API specification</strong> into the reserved
-<strong>/zalando-apis</strong> directory of the <strong>deployment artifact</strong> used to deploy the
-provisioning service. The directory must only contain <strong>self-contained YAML</strong>
-<strong>files</strong> that each describe one API (exception see <a href="#234">[234]</a>). We prefer this
-deployment artifact-based method over the past (now legacy)
-<code>.well-known/schema-discovery</code> service endpoint-based publishing process, that
-we only support for backward compatibility reasons.</p>
-</div>
-<div class="paragraph">
-<p>Background: In our dynamic and complex service infrastructure, it is important
-to provide API client developers a central place with online access to the API
-specifications of all running applications. As a part of the infrastructure,
-the API publishing process is used to detect API specifications. The findings
-are published in the API Portal - the universal hub for all Zalando APIs.</p>
-</div>
-<div class="paragraph">
-<p><strong>Note:</strong> To publish an API, it is still necessary to deploy the artifact
-successful, as we focus the discovery experience on APIs supported by running
-services.</p>
-</div>
 </div>
 </div>
 <div class="sect1">
@@ -490,7 +469,7 @@ of the client-id retrieved from the OAuth token.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-04-06 10:27:21 UTC
+Last updated 2020-04-06 10:33:29 UTC
 </div>
 </div>
 </body>
