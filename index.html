@@ -1322,8 +1322,8 @@ a > code { background-color: #f0f0f0; padding: .1em .4em .1em .4em !important; f
 <div class="sectionbody">
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 32%;">
-<col style="width: 68%;">
+<col style="width: 25%;">
+<col style="width: 75%;">
 </colgroup>
 <thead>
 <tr>
@@ -1353,7 +1353,7 @@ a > code { background-color: #f0f0f0; padding: .1em .4em .1em .4em !important; f
 <p class="tableblock"><span class="must-keyword"><strong>MUST</strong></span> not use URI versioning within OPENAPI Specification</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">JSON Guidelines</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>JSON Guidelines</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="must-keyword"><strong>MUST</strong></span> property names must be ASCII snake_case (and never camelCase): ^[a-z_][a-z_0-9]*$ <a href="#118">[118]</a></p>
 <p class="tableblock"><span class="must-keyword"><strong>MUST</strong></span> declare enum values using UPPER_SNAKE_CASE format <a href="#240">[240]</a></p>
 <p class="tableblock"><span class="should-keyword"><strong>SHOULD</strong></span> pluralize array names <a href="#120">[120]</a></p>
@@ -1392,17 +1392,20 @@ a > code { background-color: #f0f0f0; padding: .1em .4em .1em .4em !important; f
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>HTTP status codes and errors</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="must-keyword"><strong>MUST</strong></span> specify success and error responses <a href="#151">[151]</a></p>
 <p class="tableblock"><span class="must-keyword"><strong>MUST</strong></span> use standard HTTP status codes <a href="#150">[150]</a></p>
-<p class="tableblock"><span class="must-keyword"><strong>MUST</strong></span> not expose stack traces</p></td>
+<p class="tableblock"><span class="should-keyword"><strong>SHOULD</strong></span> not expose stack traces <a href="#177">[177]</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Hypermedia</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">* <span class="must-keyword"><strong>MUST</strong></span> use REST maturity level 2</p>
-<p class="tableblock">* <span class="must-keyword"><strong>MUST</strong></span> use full, absolute URI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">* <span class="must-keyword"><strong>MUST</strong></span> use REST maturity level 2 <a href="#162">[162]</a></p>
+<p class="tableblock">* <span class="must-keyword"><strong>MUST</strong></span> use full, absolute URI <a href="#217">[217]</a></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Common headers</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="must-keyword"><strong>MUST</strong></span> use Content-* headers correctly</p>
-<p class="tableblock"><span class="must-keyword"><strong>MUST</strong></span> publish Open API specification</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="must-keyword"><strong>MUST</strong></span> use Content-* headers correctly <a href="#178">[178]</a></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>API Operation</strong></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="must-keyword"><strong>MUST</strong></span> publish Open API specification <a href="#192">[192]</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -9088,7 +9091,7 @@ header.prepend(nav);
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-04-06 15:52:23 UTC
+Last updated 2020-04-06 17:05:41 UTC
 </div>
 </div>
 <style>
