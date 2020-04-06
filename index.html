@@ -1325,29 +1325,31 @@ a > code { background-color: #f0f0f0; padding: .1em .4em .1em .4em !important; f
 <col style="width: 32%;">
 <col style="width: 68%;">
 </colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top"><strong>Topic</strong></th>
+<th class="tableblock halign-left valign-top"><strong>Key principles</strong></th>
+</tr>
+</thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Topic</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Key principles</strong></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">General guidelines</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>General guidelines</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><a href="#100"><span class="must-keyword"><strong>MUST</strong></span> follow API first principle</a></p>
 <p class="tableblock"><a href="#101"><span class="must-keyword"><strong>MUST</strong></span> provide API specification using Open API</a></p>
 <p class="tableblock"><span class="should-keyword"><strong>SHOULD</strong></span> <a href="#102">provide API user</a></p>
 <p class="tableblock"><span class="must-keyword"><strong>MUST</strong></span> write APIs using U.S. English</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">API Design Review Process</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>API Design Review Process</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="should-keyword"><strong>SHOULD</strong></span> API Design Review Process</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Meta information</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Meta information</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="must-keyword"><strong>MUST</strong></span> contain API meta information</p>
 <p class="tableblock"><span class="must-keyword"><strong>MUST</strong></span> use semantic versioning</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Compatibility</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Compatibility</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="must-keyword"><strong>MUST</strong></span> always return JSON objects as top-level data structures</p>
 <p class="tableblock"><span class="must-keyword"><strong>MUST</strong></span> not use URI versioning within OPENAPI Specification</p></td>
 </tr>
@@ -1363,14 +1365,14 @@ a > code { background-color: #f0f0f0; padding: .1em .4em .1em .4em !important; f
 <p class="tableblock"><span class="should-keyword"><strong>SHOULD</strong></span> define time durations and intervals properties conform to ISO 8601</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Data formats</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Data formats</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="must-keyword"><strong>MUST</strong></span> use JSON to encode structured data</p>
 <p class="tableblock"><span class="must-keyword"><strong>MUST</strong></span> use standard date and time formats</p>
 <p class="tableblock"><span class="should-keyword"><strong>SHOULD</strong></span> use standards for country, language and currency codes</p>
 <p class="tableblock"><span class="must-keyword"><strong>MUST</strong></span> define format for number and integer types</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">API naming</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>API naming</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="must-keyword"><strong>MUST</strong></span> use lowercase separate words with hyphens for path segments</p>
 <p class="tableblock"><span class="must-keyword"><strong>MUST</strong></span> use snake_case (never camelCase) for query parameters</p>
 <p class="tableblock"><span class="must-keyword"><strong>MUST</strong></span> pluralize resource names</p>
@@ -1378,7 +1380,7 @@ a > code { background-color: #f0f0f0; padding: .1em .4em .1em .4em !important; f
 <p class="tableblock"><span class="must-keyword"><strong>MUST</strong></span> avoid trailing slashes</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Resources</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Resources</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="must-keyword"><strong>MUST</strong></span> avoid trailing slashes
  avoid actions — think about resources</p>
 <p class="tableblock"><span class="must-keyword"><strong>MUST</strong></span> avoid trailing slashes
@@ -1395,12 +1397,12 @@ a > code { background-color: #f0f0f0; padding: .1em .4em .1em .4em !important; f
  not expose stack traces</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Hypermedia</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Hypermedia</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">* <span class="must-keyword"><strong>MUST</strong></span> use REST maturity level 2</p>
 <p class="tableblock">* <span class="must-keyword"><strong>MUST</strong></span> use full, absolute URI</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Common headers</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Common headers</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="must-keyword"><strong>MUST</strong></span> use Content-* headers correctly</p>
 <p class="tableblock"><span class="must-keyword"><strong>MUST</strong></span> publish Open API specification</p></td>
 </tr>
@@ -9088,7 +9090,7 @@ header.prepend(nav);
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-04-06 14:44:04 UTC
+Last updated 2020-04-06 14:50:06 UTC
 </div>
 </div>
 <style>
