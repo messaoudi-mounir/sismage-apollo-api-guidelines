@@ -1322,8 +1322,8 @@ a > code { background-color: #f0f0f0; padding: .1em .4em .1em .4em !important; f
 <div class="sectionbody">
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 75%;">
+<col style="width: 35%;">
+<col style="width: 65%;">
 </colgroup>
 <tbody>
 <tr>
@@ -1331,16 +1331,78 @@ a > code { background-color: #f0f0f0; padding: .1em .4em .1em .4em !important; f
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Key principles</strong></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>General guidelines</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="must-keyword"><strong>MUST</strong></span> follow API first principle</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">General guidelines</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="must-keyword"><strong>MUST</strong></span> follow API first principle
+<span class="must-keyword"><strong>MUST</strong></span> provide API specification using Open API
+<span class="should-keyword"><strong>SHOULD</strong></span> provide API user
+<span class="must-keyword"><strong>MUST</strong></span> write APIs using U.S. English</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>API Design Review Process</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">{SOULD} Review</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">API Design Review Process</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="should-keyword"><strong>SHOULD</strong></span> API Design Review Process</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Meta information</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="must-keyword"><strong>MUST</strong></span> contain API meta information</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Meta information</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="must-keyword"><strong>MUST</strong></span> contain API meta information
+<span class="must-keyword"><strong>MUST</strong></span> use semantic versioning</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Compatibility</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="must-keyword"><strong>MUST</strong></span> always return JSON objects as top-level data structures
+<span class="must-keyword"><strong>MUST</strong></span> not use URI versioning within OPENAPI Specification</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">JSON Guidelines</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="must-keyword"><strong>MUST</strong></span> property names must be ASCII snake_case (and never camelCase): ^[a-z_][a-z_0-9]*$
+<span class="must-keyword"><strong>MUST</strong></span> declare enum values using UPPER_SNAKE_CASE format
+<span class="should-keyword"><strong>SHOULD</strong></span> pluralize array names
+<span class="must-keyword"><strong>MUST</strong></span> not use null for boolean properties
+<span class="should-keyword"><strong>SHOULD</strong></span> not use null for empty arrays
+<span class="should-keyword"><strong>SHOULD</strong></span> represent enumerations as strings
+<span class="should-keyword"><strong>SHOULD</strong></span> define dates properties compliant with RFC 3339
+<span class="should-keyword"><strong>SHOULD</strong></span> define time durations and intervals properties conform to ISO 8601</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Data formats</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="must-keyword"><strong>MUST</strong></span> use JSON to encode structured data
+<span class="must-keyword"><strong>MUST</strong></span> use standard date and time formats
+<span class="should-keyword"><strong>SHOULD</strong></span> use standards for country, language and currency codes
+<span class="must-keyword"><strong>MUST</strong></span> define format for number and integer types</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">API naming</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><span class="must-keyword"><strong>MUST</strong></span> use lowercase separate words with hyphens for path segments
+<span class="must-keyword"><strong>MUST</strong></span> use snake_case (never camelCase) for query parameters
+<span class="must-keyword"><strong>MUST</strong></span> pluralize resource names
+<span class="should-keyword"><strong>SHOULD</strong></span> not use /api as base path
+<span class="must-keyword"><strong>MUST</strong></span> avoid trailing slashes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Resources</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">•<span class="must-keyword"><strong>MUST</strong></span> avoid trailing slashes
+ avoid actions — think about resources
+•<span class="must-keyword"><strong>MUST</strong></span> avoid trailing slashes
+ keep URLs verb-free
+•<span class="must-keyword"><strong>MUST</strong></span> avoid trailing slashes
+ identify resources and sub-resources via path segments
+•<span class="must-keyword"><strong>MUST</strong></span> avoid trailing slashes
+ use HTTP methods correctly
+•<span class="must-keyword"><strong>MUST</strong></span> avoid trailing slashes
+ specify success and error responses
+•<span class="must-keyword"><strong>MUST</strong></span> avoid trailing slashes
+ use standard HTTP status codes
+•<span class="must-keyword"><strong>MUST</strong></span> avoid trailing slashes
+ not expose stack traces</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Hypermedia</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">•<span class="must-keyword"><strong>MUST</strong></span> use REST maturity level 2
+•<span class="must-keyword"><strong>MUST</strong></span> use full, absolute URI</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Common headers</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">•<span class="must-keyword"><strong>MUST</strong></span> use Content-* headers correctly
+•<span class="must-keyword"><strong>MUST</strong></span> publish Open API specification</p></td>
 </tr>
 </tbody>
 </table>
@@ -9026,7 +9088,7 @@ header.prepend(nav);
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-04-06 12:28:15 UTC
+Last updated 2020-04-06 13:01:49 UTC
 </div>
 </div>
 <style>

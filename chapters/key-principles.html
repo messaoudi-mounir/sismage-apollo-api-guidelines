@@ -443,8 +443,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <div id="content">
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
-<col style="width: 25%;">
-<col style="width: 75%;">
+<col style="width: 35%;">
+<col style="width: 65%;">
 </colgroup>
 <tbody>
 <tr>
@@ -452,23 +452,85 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Key principles</strong></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>General guidelines</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">{MUST} follow API first principle</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">General guidelines</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">{MUST} follow API first principle
+{MUST} provide API specification using Open API
+{SHOULD} provide API user
+{MUST} write APIs using U.S. English</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>API Design Review Process</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">{SOULD} Review</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">API Design Review Process</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">{SHOULD} API Design Review Process</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Meta information</strong></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">{MUST} contain API meta information</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Meta information</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">{MUST} contain API meta information
+{MUST} use semantic versioning</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Compatibility</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">{MUST} always return JSON objects as top-level data structures
+{MUST} not use URI versioning within OPENAPI Specification</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">JSON Guidelines</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">{MUST} property names must be ASCII snake_case (and never camelCase): ^[a-z_][a-z_0-9]*$
+{MUST} declare enum values using UPPER_SNAKE_CASE format
+{SHOULD} pluralize array names
+{MUST} not use null for boolean properties
+{SHOULD} not use null for empty arrays
+{SHOULD} represent enumerations as strings
+{SHOULD} define dates properties compliant with RFC 3339
+{SHOULD} define time durations and intervals properties conform to ISO 8601</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Data formats</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">{MUST} use JSON to encode structured data
+{MUST} use standard date and time formats
+{SHOULD} use standards for country, language and currency codes
+{MUST} define format for number and integer types</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">API naming</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">{MUST} use lowercase separate words with hyphens for path segments
+{MUST} use snake_case (never camelCase) for query parameters
+{MUST} pluralize resource names
+{SHOULD} not use /api as base path
+{MUST} avoid trailing slashes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Resources</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">•{MUST} avoid trailing slashes
+ avoid actions — think about resources
+•{MUST} avoid trailing slashes
+ keep URLs verb-free
+•{MUST} avoid trailing slashes
+ identify resources and sub-resources via path segments
+•{MUST} avoid trailing slashes
+ use HTTP methods correctly
+•{MUST} avoid trailing slashes
+ specify success and error responses
+•{MUST} avoid trailing slashes
+ use standard HTTP status codes
+•{MUST} avoid trailing slashes
+ not expose stack traces</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Hypermedia</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">•{MUST} use REST maturity level 2
+•{MUST} use full, absolute URI</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Common headers</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">•{MUST} use Content-* headers correctly
+•{MUST} publish Open API specification</p></td>
 </tr>
 </tbody>
 </table>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-04-06 12:28:15 UTC
+Last updated 2020-04-06 13:01:49 UTC
 </div>
 </div>
 </body>
