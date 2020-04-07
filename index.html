@@ -1468,6 +1468,7 @@ establish "consistent API look and feel" quality.
 <ul class="sectlevel2">
 <li><a href="#104"><span class="must-keyword"><strong>MUST</strong></span> secure endpoints with OAuth 2.0</a></li>
 <li><a href="#105"><span class="should-keyword"><strong>SHOULD</strong></span> define and assign permissions (scopes)</a></li>
+<li><a href="#225"><span class="must-keyword"><strong>MUST</strong></span> follow naming convention for permissions (scopes)</a></li>
 </ul>
 </li>
 <li><a href="#compatibility">7. Compatibility</a>
@@ -2424,7 +2425,7 @@ permission must be assigned to each endpoint. Permissions are defined as shown
 in the <a href="#104">previous section</a>.</p>
 </div>
 <div class="paragraph">
-<p>The naming schema for permissions corresponds to the naming schema for <a href="#224">hostnames</a> and <a href="#213">event type names</a>. Please refer to <a href="#225">[225]</a> for
+<p>The naming schema for permissions corresponds to the naming schema for <a href="#224">hostnames</a> and <a href="#213">event type names</a>. Please refer to <a href="#225"><span class="must-keyword"><strong>MUST</strong></span> follow naming convention for permissions (scopes)</a> for
 designing permission names.</p>
 </div>
 <div class="paragraph">
@@ -2518,6 +2519,31 @@ as OAuth2 default scope.</p>
 <div class="paragraph">
 <p>Hint: you need not explicitly define the "Authorization" header; it is a
 standard header so to say implicitly defined via the security section.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="225"><a class="link" href="#225"><span class="must-keyword"><strong>MUST</strong></span> follow naming convention for permissions (scopes)</a></h3>
+<div class="paragraph">
+<p>As long as the <a href="#223">functional naming</a> is not supported for permissions,
+permission names in APIs must conform to the following naming pattern:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="bnf">&lt;permission&gt; ::= &lt;standard-permission&gt; |  -- should be sufficient for majority of use cases
+                 &lt;resource-permission&gt; |  -- for special security access differentiation use cases
+                 &lt;pseudo-permission&gt;      -- used to explicitly indicate that access is not restricted
+
+&lt;standard-permission&gt; ::= &lt;application-id&gt;.&lt;access-mode&gt;
+&lt;resource-permission&gt; ::= &lt;application-id&gt;.&lt;resource-name&gt;.&lt;access-mode&gt;
+&lt;pseudo-permission&gt;   ::= uid
+
+&lt;application-id&gt;      ::= [a-z][a-z0-9-]*  -- application identifier
+&lt;resource-name&gt;       ::= [a-z][a-z0-9-]*  -- free resource identifier
+&lt;access-mode&gt;         ::= read | write    -- might be extended in future</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This pattern is compatible with the previous definition.</p>
 </div>
 </div>
 </div>
@@ -9093,7 +9119,7 @@ header.prepend(nav);
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-04-07 20:31:16 UTC
+Last updated 2020-04-07 20:34:38 UTC
 </div>
 </div>
 <style>
