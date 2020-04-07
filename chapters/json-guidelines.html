@@ -670,9 +670,35 @@ ignored, i.e. not modified.</p>
 <div class="paragraph">
 <p>Strings are a reasonable target for values that are by design enumerations.</p>
 </div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="235">{MAY} name date/time properties with <code>_at</code> suffix</h2>
+<div class="sectionbody">
 <div class="paragraph">
-<p><strong>APOLLO-Commented paragraph</strong> MAY and not SHOULD in APOLLO context
-== {SHOULD} name date/time properties with <code>_at</code> suffix</p>
+<p>Dates and date-time properties should end with <code>_at</code> to distinguish them from
+boolean properties which otherwise would have very similar or even identical
+names:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>{created_at} rather than {created},</p>
+</li>
+<li>
+<p>{modified_at} rather than {modified},</p>
+</li>
+<li>
+<p><code>occurred_at</code> rather than <code>occurred</code>, and</p>
+</li>
+<li>
+<p><code>returned_at</code> rather than <code>returned</code>.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><strong>Note:</strong> {created} and {modified} were mentioned in an earlier version of the
+guideline and are therefore still accepted for APIs that predate this rule.</p>
 </div>
 </div>
 </div>
@@ -738,7 +764,7 @@ be strings formatted as recommended by {ISO-8601}[ISO 8601]({RFC-3339}#appendix-
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-04-07 21:58:47 UTC
+Last updated 2020-04-07 22:05:07 UTC
 </div>
 </div>
 </body>
