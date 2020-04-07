@@ -558,8 +558,8 @@ of the Open API specification and must conform to the following definition:</p>
   format: urn
   pattern: ^[a-z0-9][a-z0-9-:.]{6,62}[a-z0-9]$
   description: |
-    Mandatory globally unique and immutable API identifier. The API
-    id allows to track the evolution and history of an API specification
+    Mandatory globally unique and immutable API identifier for "company-internal" audience.
+    The API id allows to track the evolution and history of an API specification
     as a sequence of versions.</code></pre>
 </div>
 </div>
@@ -620,8 +620,7 @@ specific product portfolio owned by the same business unit.</p>
 <dt class="hdlist1"><strong>company-internal</strong></dt>
 <dd>
 <p>The API consumers with this audience are restricted to applications owned
-by the business units of the same the company (e.g. Zalando company with
-Zalando SE, Zalando Payments SE &amp; Co. KG. etc.)</p>
+by the business units of the same the company</p>
 </dd>
 <dt class="hdlist1"><strong>external-partner</strong></dt>
 <dd>
@@ -663,9 +662,7 @@ the Open API specification and must conform to the following specification:</p>
 reason a smaller audience group is intentionally included in the wider group
 and thus does not need to be declared additionally. If parts of your API have
 a different target audience, we recommend to split API specifications along
-the target audience — even if this creates redundancies
-(<a href="https://apis.zalando.net/redirect/85ee93a3-7a78-4461-8bf1-08ffdaebcd18">rationale
-(internal link)</a>).</p>
+the target audience — even if this creates redundancies.</p>
 </div>
 <div class="paragraph">
 <p>Example:</p>
@@ -681,17 +678,12 @@ info:
   &lt;...&gt;</code></pre>
 </div>
 </div>
-<div class="paragraph">
-<p>For details and more information on audience groups see the
-<a href="https://apis.zalando.net/redirect/85ee93a3-7a78-4461-8bf1-08ffdaebcd18">
-API Audience narrative (internal link)</a>.</p>
-</div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-04-07 13:59:55 UTC
+Last updated 2020-04-07 20:31:16 UTC
 </div>
 </div>
 </body>
