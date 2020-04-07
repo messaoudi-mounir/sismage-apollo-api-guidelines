@@ -1571,7 +1571,7 @@ establish "consistent API look and feel" quality.
 <li><a href="#220"><span class="may-keyword"><strong>MAY</strong></span> use most specific HTTP status codes</a></li>
 <li><a href="#152"><span class="should-keyword"><strong>SHOULD</strong></span> use code 207 for batch or bulk requests</a></li>
 <li><a href="#153"><span class="should-keyword"><strong>SHOULD</strong></span> use code 429 with headers for rate limits</a></li>
-<li><a href="#176"><span class="must-keyword"><strong>MUST</strong></span> use problem JSON</a></li>
+<li><a href="#176"><span class="should-keyword"><strong>SHOULD</strong></span> use problem JSON</a></li>
 <li><a href="#177"><span class="should-keyword"><strong>SHOULD</strong></span> not expose stack traces</a></li>
 </ul>
 </li>
@@ -3225,7 +3225,7 @@ following <a href="https://tools.ietf.org/html/rfc7493#section-4.4">RFC 7493 Sec
 <code>application/x.zalando.article+json</code>. This usage is not recommended
 anymore and should be avoided, except where it is necessary for cases of
 <a href="#114">media type versioning</a>. Instead, just use the standard media type name
-<code>application/json</code> (or <code>application/problem+json</code> for <a href="#176"><span class="must-keyword"><strong>MUST</strong></span> use problem JSON</a>).</p>
+<code>application/json</code> (or <code>application/problem+json</code> for <a href="#176"><span class="should-keyword"><strong>SHOULD</strong></span> use problem JSON</a>).</p>
 </div>
 <div class="paragraph">
 <p>Custom media types beginning with <code>x</code> bring no advantage compared to the
@@ -5697,7 +5697,7 @@ number of requests made within a given window for each named entity.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="176"><a class="link" href="#176"><span class="must-keyword"><strong>MUST</strong></span> use problem JSON</a></h3>
+<h3 id="176"><a class="link" href="#176"><span class="should-keyword"><strong>SHOULD</strong></span> use problem JSON</a></h3>
 <div class="paragraph">
 <p><a href="https://tools.ietf.org/html/rfc7807">RFC 7807</a> defines a Problem JSON object and  the media type
 <code>application/problem+json</code>. Operations should return it (together with a
@@ -9040,7 +9040,7 @@ header.prepend(nav);
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-04-07 22:17:11 UTC
+Last updated 2020-04-07 22:20:20 UTC
 </div>
 </div>
 <style>
