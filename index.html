@@ -2712,21 +2712,16 @@ most tools.</p>
 <div class="sect2">
 <h3 id="1002"><a class="link" href="#1002"><span class="must-keyword"><strong>MUST</strong></span> use URI versioning at deployment level <strong>ONLY</strong></a></h3>
 <div class="paragraph">
-<p>With URI versioning a (major) version number is included in the path, e.g.
-<code>GET /v1/orders</code>.
-The consumer has to wait until the provider has been released
-and deployed.
+<p>API versioning <span class="should-keyword"><strong>SHOULD</strong></span> be done using the URI versioning mechanism (e.g. /api/v1/wells).
+API versions <span class="should-keyword"><strong>SHOULD</strong></span> be written in the form vN with N being an integer (e.g. /api/v3/wells).
 Two versions should be supported at most at the same time (Native apps need a longer cycle).</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="1003"><a class="link" href="#1003"><span class="must-keyword"><strong>MUST</strong></span> not use URI versioning in OPENAPI specification</a></h3>
 <div class="paragraph">
-<p>With URI versioning a (major) version number is included in the path, e.g.
-<code>GET /v1/orders</code>.
-The consumer has to wait until the provider has been released
-and deployed.
-Two versions should be supported at most at the same time (Native apps need a longer cycle).</p>
+<p>In most cases, all resources provided by a service are part of the public API,
+and therefore should be made available under the root "/" base path.</p>
 </div>
 </div>
 </div>
@@ -9103,7 +9098,7 @@ header.prepend(nav);
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-04-07 21:09:42 UTC
+Last updated 2020-04-07 21:24:09 UTC
 </div>
 </div>
 <style>
