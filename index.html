@@ -3756,94 +3756,6 @@ defined as follows:</p>
 <p>The response page may contain additional metadata about the collection or the
 current page.</p>
 </div>
-</div>
-<div class="sect3">
-<h4 id="address-fields"><a class="link" href="#address-fields">Address fields</a></h4>
-<div class="paragraph">
-<p>Address structures play a role in different functional and use-case
-contexts, including country variances. All attributes that relate to
-address information should follow the naming and semantics defined
-below.</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="yaml"><span class="key">addressee</span>:
-  <span class="key">description</span>: <span class="string"><span class="content">a (natural or legal) person that gets addressed</span></span>
-  <span class="key">type</span>: <span class="string"><span class="content">object</span></span>
-  <span class="key">properties</span>:
-    <span class="key">salutation</span>:
-      <span class="key">description</span>: <span class="string"><span class="delimiter">|</span><span class="content">
-        a salutation and/or title used for personal contacts to some
-        addressee; not to be confused with the gender information!</span></span>
-      <span class="key">type</span>: <span class="string"><span class="content">string</span></span>
-      <span class="key">example</span>: <span class="string"><span class="content">Mr</span></span>
-    <span class="key">first_name</span>:
-      <span class="key">description</span>: <span class="string"><span class="delimiter">|</span><span class="content">
-        given name(s) or first name(s) of a person; may also include the
-        middle names.</span></span>
-      <span class="key">type</span>: <span class="string"><span class="content">string</span></span>
-      <span class="key">example</span>: <span class="string"><span class="content">Hans Dieter</span></span>
-    <span class="key">last_name</span>:
-      <span class="key">description</span>: <span class="string"><span class="delimiter">|</span><span class="content">
-        family name(s) or surname(s) of a person</span></span>
-      <span class="key">type</span>: <span class="string"><span class="content">string</span></span>
-      <span class="key">example</span>: <span class="string"><span class="content">Mustermann</span></span>
-    <span class="key">business_name</span>:
-      <span class="key">description</span>: <span class="string"><span class="delimiter">|</span><span class="content">
-        company name of the business organization. Used when a business is
-        the actual addressee; for personal shipments to office addresses, use
-        `care_of` instead.</span></span>
-      <span class="key">type</span>: <span class="string"><span class="content">string</span></span>
-      <span class="key">example</span>: <span class="string"><span class="content">Consulting Services GmbH</span></span>
-  <span class="key">required</span>:
-    - <span class="string"><span class="content">first_name</span></span>
-    - <span class="string"><span class="content">last_name</span></span>
-
-<span class="key">address</span>:
-  <span class="key">description</span>:
-    <span class="error">an address of a location/destination</span>
-  <span class="key">type</span>: <span class="string"><span class="content">object</span></span>
-  <span class="key">properties</span>:
-    <span class="key">care_of</span>:
-      <span class="key">description</span>: <span class="string"><span class="delimiter">|</span><span class="content">
-        (aka c/o) the person that resides at the address, if different from
-        addressee. E.g. used when sending a personal parcel to the
-        office /someone else's home where the addressee resides temporarily</span></span>
-      <span class="key">type</span>: <span class="string"><span class="content">string</span></span>
-      <span class="key">example</span>: <span class="string"><span class="content">Consulting Services GmbH</span></span>
-    <span class="key">street</span>:
-      <span class="key">description</span>: <span class="string"><span class="delimiter">|</span><span class="content">
-        the full street address including house number and street name</span></span>
-      <span class="key">type</span>: <span class="string"><span class="content">string</span></span>
-      <span class="key">example</span>: <span class="string"><span class="content">Schönhauser Allee 103</span></span>
-    <span class="key">additional</span>:
-      <span class="key">description</span>: <span class="string"><span class="delimiter">|</span><span class="content">
-        further details like building name, suite, apartment number, etc.</span></span>
-      <span class="key">type</span>: <span class="string"><span class="content">string</span></span>
-      <span class="key">example</span>: <span class="string"><span class="content">2. Hinterhof rechts</span></span>
-    <span class="key">city</span>:
-      <span class="key">description</span>: <span class="string"><span class="delimiter">|</span><span class="content">
-        name of the city / locality</span></span>
-      <span class="key">type</span>: <span class="string"><span class="content">string</span></span>
-      <span class="key">example</span>: <span class="string"><span class="content">Berlin</span></span>
-    <span class="key">zip</span>:
-      <span class="key">description</span>: <span class="string"><span class="delimiter">|</span><span class="content">
-        zip code or postal code</span></span>
-      <span class="key">type</span>: <span class="string"><span class="content">string</span></span>
-      <span class="key">example</span>: <span class="string"><span class="content">14265</span></span>
-    <span class="key">country_code</span>:
-      <span class="key">description</span>: <span class="string"><span class="delimiter">|</span><span class="content">
-        the country code according to
-        [iso-3166-1-alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)</span></span>
-      <span class="key">type</span>: <span class="string"><span class="content">string</span></span>
-      <span class="key">example</span>: <span class="string"><span class="content">DE</span></span>
-  <span class="key">required</span>:
-    - <span class="string"><span class="content">street</span></span>
-    - <span class="string"><span class="content">city</span></span>
-    - <span class="string"><span class="content">zip</span></span>
-    - <span class="string"><span class="content">country_code</span></span></code></pre>
-</div>
-</div>
 <div class="paragraph">
 <p>Grouping and cardinality of fields in specific data types may vary based
 on the specific use case (e.g. combining addressee and address fields
@@ -9131,7 +9043,7 @@ header.prepend(nav);
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-04-07 22:05:07 UTC
+Last updated 2020-04-07 22:09:21 UTC
 </div>
 </div>
 <style>
