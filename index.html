@@ -1610,37 +1610,6 @@ establish "consistent API look and feel" quality.
 <li><a href="#230"><span class="may-keyword"><strong>MAY</strong></span> consider to support <code>Idempotency-Key</code> header</a></li>
 </ul>
 </li>
-<li><a href="#api-operation">20. API Operation</a>
-<ul class="sectlevel2">
-<li><a href="#192"><span class="must-keyword"><strong>MUST</strong></span> publish Open API specification</a></li>
-<li><a href="#193"><span class="should-keyword"><strong>SHOULD</strong></span> monitor API usage</a></li>
-</ul>
-</li>
-<li><a href="#appendix-references">Appendix A: References</a>
-<ul class="sectlevel2">
-<li><a href="#openapi-specification">Open API specification</a></li>
-<li><a href="#publications-specifications-and-standards">Publications, specifications and standards</a></li>
-<li><a href="#dissertations">Dissertations</a></li>
-<li><a href="#books">Books</a></li>
-<li><a href="#blogs">Blogs</a></li>
-</ul>
-</li>
-<li><a href="#appendix-tooling">Appendix B: Tooling</a>
-<ul class="sectlevel2">
-<li><a href="#api-first-integrations">API first integrations</a></li>
-<li><a href="#support-libraries">Support libraries</a></li>
-</ul>
-</li>
-<li><a href="#appendix-best-practices">Appendix C: Best practices</a>
-<ul class="sectlevel2">
-<li><a href="#optimistic-locking">Optimistic locking in RESTful APIs</a></li>
-</ul>
-</li>
-<li><a href="#appendix-changelog">Appendix D: Changelog</a>
-<ul class="sectlevel2">
-<li><a href="#rule-changes">Rule Changes</a></li>
-</ul>
-</li>
 </ul>
 </div>
 </div>
@@ -2008,7 +1977,8 @@ make it discoverable for the group via our <a href="https://developper-np.apollo
 <a href="https://openapi-map.apihandyman.io/">Open API specification mind map</a>.
 To explore and validate/evaluate
 existing APIs the <a href="https://editor.swagger.io/">Swagger Editor</a> or our
-<a href="https://developper-np.apollo.total/">Apollo API Portal</a> may be a good starting point.</p>
+<a href="https://developper-np.apollo.total/">Apollo API Portal [internal link</a>]
+may be a good starting point.</p>
 </div>
 </div>
 <div class="sect2">
@@ -2758,7 +2728,7 @@ what consumers should use instead and how to migrate.</p>
 <p>Owners of an API, API version, or API feature used in production that is
 scheduled for sunset must monitor the usage of the sunset API, API version, or
 API feature in order to observe migration progress and avoid uncontrolled
-breaking effects on ongoing consumers. See also <a href="#193"><span class="should-keyword"><strong>SHOULD</strong></span> monitor API usage</a>.</p>
+breaking effects on ongoing consumers. See also <a href="#193">[193]</a>.</p>
 </div>
 </div>
 <div class="sect2">
@@ -3549,11 +3519,7 @@ cross entities.</p>
 another object must use a name that corresponds to the type of the referenced
 object or the relationship to the referenced object followed by <code>_id</code> (e.g.
 <code>partner_id</code> not <code>partner_number</code>, or <code>parent_node_id</code> for the reference to a parent
-node from a child node, even if both have the type <code>Node</code>).
-<strong>Exception</strong>: We use <code>customer_number</code> instead of <code>customer_id</code> for customer facing
-identification of customers due to legacy reasons. (Hint: <code>customer_id</code> used to be defined
-as internal only, technical integer key, see
-<a href="https://docs.google.com/document/d/1Lj56Snl6ISn6JsgyXpiRNUjzO7u2DsqBXCgHYvOQi7Y">Naming Decision: <code>customer_number</code> vs <code>customer_id</code> [internal link</a>]).</p>
+node from a child node, even if both have the type <code>Node</code>).</p>
 </li>
 <li>
 <p><a id="created_at"></a><a href="#created_at"><code>created_at</code></a>: when the object was created. If used, this must
@@ -3573,7 +3539,7 @@ provided that otherwise requires examining the Open API file.</p>
 <li>
 <p><a id="etag"></a><a href="https://tools.ietf.org/html/rfc7232#section-2.3"><code>ETag</code></a>: the <a href="#182">ETag</a> of an <a href="#158">embedded sub-resource</a>. It
 may be used to carry the <a href="https://tools.ietf.org/html/rfc7232#section-2.3"><code>ETag</code></a> for subsequent <a href="#put"><code>PUT</code></a>/<a href="#patch"><code>PATCH</code></a> calls (see
-<a href="#etag-in-result-entities"><code>ETags</code> in result entities</a>).</p>
+<a href="#etag-in-result-entities">[etag-in-result-entities]</a>).</p>
 </li>
 </ul>
 </div>
@@ -3810,17 +3776,6 @@ depending on the <a href="#219">audience</a> as follows (see <a href="#223"><spa
 &lt;functional-hostname&gt;  ::= &lt;functional-name&gt;.apolloapis.com</code></pre>
 </div>
 </div>
-<div class="paragraph">
-<p>The following application specific legacy convention is <strong>only</strong> allowed for
-hostnames of <a href="#219">component-internal</a> APIs:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="bnf">&lt;application-hostname&gt; ::= &lt;application-id&gt;.&lt;organization-unit&gt;.zalan.do
-&lt;application-id&gt;       ::= [a-z][a-z0-9-]*  -- application identifier
-&lt;organization-id&gt;      ::= [a-z][a-z0-9-]*  -- organization unit identifier, e.g. team identifier</code></pre>
-</div>
-</div>
 </div>
 <div class="sect2">
 <h3 id="129"><a class="link" href="#129"><span class="must-keyword"><strong>MUST</strong></span> use lowercase separate words with hyphens for path segments</a></h3>
@@ -3871,8 +3826,7 @@ Original-Message-ID</code></pre>
 <p>See also: <a href="https://tools.ietf.org/html/rfc7230#page-22">HTTP Headers are case-insensitive (RFC 7230)</a>.</p>
 </div>
 <div class="paragraph">
-<p>See <a href="#common-headers">Common headers</a> and <a href="#proprietary-headers">[proprietary-headers]</a> sections for more guidance
-on HTTP headers.</p>
+<p>See <a href="#common-headers">Common headers</a> sections for more guidance on HTTP headers.</p>
 </div>
 </div>
 <div class="sect2">
@@ -4366,8 +4320,7 @@ endpoint must be documented with the hint <a href="#get-with-body"><code>GET Wit
 using header parameters. From a conceptual point of view, the semantic of an
 operation should always be expressed by the resource names, as well as the
 involved path and query parameters. In other words by everything that goes into
-the URL. Request headers are reserved for general context information (see
-<a href="#183">[183]</a>). In addition, size limits on query parameters and headers are not
+the URL. In addition, size limits on query parameters and headers are not
 reliable and depend on clients, gateways, server, and actual settings. Thus,
 switching to headers does not solve the original problem.</p>
 </div>
@@ -4426,7 +4379,7 @@ in the same single resource instance (see <a href="#149"><span class="should-key
 <div class="paragraph">
 <p><strong>Hint:</strong> To prevent unnoticed concurrent updates and duplicate creations when
 using <a href="#put"><code>PUT</code></a>, you <a href="#182"><span class="may-keyword"><strong>MAY</strong></span> consider to support <code>ETag</code> together with <code>If-Match</code>/<code>If-None-Match</code> header</a> to allow the server to react on stricter demands that
-expose conflicts and prevent lost updates. See also <a href="#optimistic-locking">Optimistic locking in RESTful APIs</a> for
+expose conflicts and prevent lost updates. See also <a href="#optimistic-locking">[optimistic-locking]</a> for
 details and options.</p>
 </div>
 </div>
@@ -4547,7 +4500,7 @@ prevent this.</p>
 <div class="paragraph">
 <p><strong>Hint:</strong> To prevent unnoticed concurrent updates when using <a href="#patch"><code>PATCH</code></a> you <a href="#182"><span class="may-keyword"><strong>MAY</strong></span> consider to support <code>ETag</code> together with <code>If-Match</code>/<code>If-None-Match</code> header</a>
 to allow the server to react on stricter demands that expose conflicts and
-prevent lost updates. See <a href="#optimistic-locking">Optimistic locking in RESTful APIs</a> and <a href="#229"><span class="should-keyword"><strong>SHOULD</strong></span> consider to design <code>POST</code> and <code>PATCH</code> idempotent</a> for details and
+prevent lost updates. See <a href="#optimistic-locking">[optimistic-locking]</a> and <a href="#229"><span class="should-keyword"><strong>SHOULD</strong></span> consider to design <code>POST</code> and <code>PATCH</code> idempotent</a> for details and
 options.</p>
 </div>
 </div>
@@ -5671,18 +5624,51 @@ by the client or the server (i.e. both for <a href="#client-side-error-codes" cl
 </div>
 <div class="paragraph">
 <p>The Open API schema definition of the Problem JSON object can be found
-<a href="https://zalando.github.io/problem/schema.yaml">on github</a>. You can
-reference it by using:</p>
+<a href="https://zalando.github.io/problem/schema.yaml">on Zalando github</a> and is
+reported below :</p>
 </div>
 <div class="listingblock">
 <div class="content">
-<pre class="CodeRay highlight"><code data-lang="yaml"><span class="key">responses</span>:
-  <span class="key">503</span>:
-    <span class="key">description</span>: <span class="string"><span class="content">Service Unavailable</span></span>
-    <span class="key">content</span>:
-      <span class="key"><span class="delimiter">&quot;</span><span class="content">application/problem+json</span><span class="delimiter">&quot;</span></span>:
-        <span class="key">schema</span>:
-          <span class="error">$ref</span>: <span class="error">'https://opensource.zalando.com/problem/schema.yaml#/Problem'</span></code></pre>
+<pre class="CodeRay highlight"><code data-lang="yaml"><span class="key">Problem</span>:
+  <span class="key">type</span>: <span class="string"><span class="content">object</span></span>
+  <span class="key">properties</span>:
+    <span class="key">type</span>:
+      <span class="key">type</span>: <span class="string"><span class="content">string</span></span>
+      <span class="key">format</span>: <span class="string"><span class="content">uri</span></span>
+      <span class="key">description</span>: <span class="string"><span class="delimiter">|</span><span class="content">
+        An absolute URI that identifies the problem type.  When dereferenced,
+        it SHOULD provide human-readable documentation for the problem type
+        (e.g., using HTML).</span></span>
+      <span class="key">default</span>: <span class="string"><span class="content">'about:blank'</span></span>
+      <span class="key">example</span>: <span class="string"><span class="content">'https://zalando.github.io/problem/constraint-violation'</span></span>
+    <span class="key">title</span>:
+      <span class="key">type</span>: <span class="string"><span class="content">string</span></span>
+      <span class="key">description</span>: <span class="string"><span class="delimiter">|</span><span class="content">
+        A short, summary of the problem type. Written in english and readable
+        for engineers (usually not suited for non technical stakeholders and
+        not localized); example: Service Unavailable</span></span>
+    <span class="key">status</span>:
+      <span class="key">type</span>: <span class="string"><span class="content">integer</span></span>
+      <span class="key">format</span>: <span class="string"><span class="content">int32</span></span>
+      <span class="key">description</span>: <span class="string"><span class="delimiter">|</span><span class="content">
+        The HTTP status code generated by the origin server for this occurrence
+        of the problem.</span></span>
+      <span class="key">minimum</span>: <span class="string"><span class="content">100</span></span>
+      <span class="key">maximum</span>: <span class="string"><span class="content">600</span></span>
+      <span class="key">exclusiveMaximum</span>: <span class="string"><span class="content">true</span></span>
+      <span class="key">example</span>: <span class="string"><span class="content">503</span></span>
+    <span class="key">detail</span>:
+      <span class="key">type</span>: <span class="string"><span class="content">string</span></span>
+      <span class="key">description</span>: <span class="string"><span class="delimiter">|</span><span class="content">
+        A human readable explanation specific to this occurrence of the
+        problem.</span></span>
+      <span class="key">example</span>: <span class="string"><span class="content">Connection to database timed out</span></span>
+    <span class="key">instance</span>:
+      <span class="key">type</span>: <span class="string"><span class="content">string</span></span>
+      <span class="key">format</span>: <span class="string"><span class="content">uri</span></span>
+      <span class="key">description</span>: <span class="string"><span class="delimiter">|</span><span class="content">
+        An absolute URI that identifies the specific occurrence of the problem.
+        It may or may not yield further information if dereferenced.</span></span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -5724,15 +5710,6 @@ The RFC encourages that custom problem types are URI references that point to hu
 <p><code><a href="http://www.businessdictionary.com/definition/stockout.html" class="bare">http://www.businessdictionary.com/definition/stockout.html</a></code></p>
 </li>
 </ul>
-</div>
-<div class="paragraph">
-<p><strong>Hint</strong> for backward compatibility: A previous version of this guideline
-(before the publication of <a href="https://tools.ietf.org/html/rfc7807">RFC 7807</a> and the registration of the
-media type) told to return custom variant of the media type
-<code>application/x.problem+json</code>. Servers for APIs defined before this change
-should pay attention to the <code>Accept</code> header sent by the client and set the
-<code>Content-Type</code> header of the problem response correspondingly. Clients of such
-APIs should accept both media types.</p>
 </div>
 </div>
 <div class="sect2">
@@ -6449,8 +6426,8 @@ target resources without 'discovering' them.</p>
 limitations and still see clear value for your usage scenario that justifies
 its additional complexity. If you use HATEOAS please share experience and
 present your findings in the
-<a href="https://confluence.zalando.net/display/GUL/API+Guild">API Guild [internal
-link</a>].</p>
+<a href="https://carbon-confluence.valiantys.net/display/PLATSUB/REST+API+Development+Guidelines">API Team (internal
+link)</a>.</p>
 </div>
 </div>
 <div class="sect2">
@@ -6557,7 +6534,7 @@ corresponding <a href="http://www.iana.org/assignments/link-relations">link rela
 <a href="#last"><code>last</code></a>, or <a href="#self"><code>self</code></a>.</p>
 </div>
 <div class="paragraph">
-<p>See <a href="#simple-hypertext-control-fields">[simple-hypertext-control-fields]</a> and <a href="#161"><span class="should-keyword"><strong>SHOULD</strong></span> use pagination links where applicable</a> for examples and more
+<p>See <a href="#link-relation-fields">simple-hypertext-control-fields</a> and <a href="#161"><span class="should-keyword"><strong>SHOULD</strong></span> use pagination links where applicable</a> for examples and more
 information.</p>
 </div>
 </div>
@@ -6811,7 +6788,7 @@ in the API definition:</p>
 </div>
 </div>
 <div class="paragraph">
-<p>Please see <a href="#optimistic-locking">Optimistic locking in RESTful APIs</a> for a detailed discussion and options.</p>
+<p>Please see <a href="#optimistic-locking">[optimistic-locking]</a> for a detailed discussion and options.</p>
 </div>
 </div>
 <div class="sect2">
@@ -6885,680 +6862,39 @@ size.</p>
 <div class="paragraph">
 <p><strong>Note:</strong> The <a href="#230"><code>Idempotency-Key</code></a> header unlike other headers in this section
 is not standardized in an RFC. Our only reference are the usage in the
-<a href="https://stripe.com/docs/api/idempotent_requests">Stripe API</a>. However, as it
+<a href="https://stripe.com/docs/api/idempotent_requests">Stripe API</a>.</p>
+</div>
+<div class="paragraph">
+<p>////<strong>Apollo commented paragraph</strong> Not in Apollo Context
+However, as it
 fit not into our section about <a href="#proprietary-headers">[proprietary-headers]</a>, and we did not want
 to change the header name and semantic, we decided to treat it as any other
 common header.</p>
 </div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="api-operation"><a class="link" href="#api-operation">20. API Operation</a></h2>
-<div class="sectionbody">
-<div class="sect2">
-<h3 id="192"><a class="link" href="#192"><span class="must-keyword"><strong>MUST</strong></span> publish Open API specification</a></h3>
 <div class="paragraph">
-<p>All service applications must publish Open API specifications of their external
-APIs. While <strong>this is optional for internal APIs</strong>, i.e. APIs marked with the
-<strong>component-internal</strong> <a href="#219">API audience</a> group, we still recommend to do so
-to profit from the API management infrastructure.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="193"><a class="link" href="#193"><span class="should-keyword"><strong>SHOULD</strong></span> monitor API usage</a></h3>
-<div class="paragraph">
-<p>Owners of APIs used in production should monitor API service to get
-information about its using clients. This information, for instance, is
-useful to identify potential review partner for API changes.</p>
+<p><strong>APOLLO-Commented paragraph</strong> No automatic publication</p>
 </div>
 <div class="paragraph">
-<p>Hint: A preferred way of client detection implementation is by logging
-of the client-id retrieved from the OAuth token.</p>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="appendix-references"><a class="link" href="#appendix-references">Appendix A: References</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>This section collects links to documents to which we refer, and base our guidelines on.</p>
-</div>
-<div class="sect2">
-<h3 id="openapi-specification"><a class="link" href="#openapi-specification">Open API specification</a></h3>
-<div class="ulist">
-<ul>
-<li>
-<p><strong><a href="https://github.com/OAI/OpenAPI-Specification/">Open API specification</a></strong></p>
-</li>
-<li>
-<p><strong><a href="https://openapi-map.apihandyman.io/">Open API specification mind map</a></strong></p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="publications-specifications-and-standards"><a class="link" href="#publications-specifications-and-standards">Publications, specifications and standards</a></h3>
-<div class="ulist">
-<ul>
-<li>
-<p><strong><a href="https://tools.ietf.org/html/rfc3339">RFC 3339</a>:</strong> Date and Time on the Internet: Timestamps</p>
-</li>
-<li>
-<p><strong><a href="https://tools.ietf.org/html/rfc4122">RFC 4122</a>:</strong> A Universally Unique IDentifier (UUID) URN Namespace</p>
-</li>
-<li>
-<p><strong><a href="https://tools.ietf.org/html/rfc4627">RFC 4627</a>:</strong> The application/json Media Type for JavaScript Object Notation (JSON)</p>
-</li>
-<li>
-<p><strong><a href="https://tools.ietf.org/html/rfc8288">RFC 8288</a>:</strong> Web Linking</p>
-</li>
-<li>
-<p><strong><a href="https://tools.ietf.org/html/rfc6585">RFC 6585</a>:</strong> Additional HTTP Status Codes</p>
-</li>
-<li>
-<p><strong><a href="https://tools.ietf.org/html/rfc6902">RFC 6902</a>:</strong> JavaScript Object Notation (JSON) Patch</p>
-</li>
-<li>
-<p><strong><a href="https://tools.ietf.org/html/rfc7159">RFC 7159</a>:</strong> The JavaScript Object Notation (JSON) Data Interchange Format</p>
-</li>
-<li>
-<p><strong><a href="https://tools.ietf.org/html/rfc7230">RFC 7230</a>:</strong> Hypertext Transfer Protocol (HTTP/1.1): Message Syntax and Routing</p>
-</li>
-<li>
-<p><strong><a href="https://tools.ietf.org/html/rfc7231">RFC 7231</a>:</strong> Hypertext Transfer Protocol (HTTP/1.1): Semantics and Content</p>
-</li>
-<li>
-<p><strong><a href="https://tools.ietf.org/html/rfc7232">RFC 7232</a>:</strong> Hypertext Transfer Protocol (HTTP/1.1): Conditional Requests</p>
-</li>
-<li>
-<p><strong><a href="https://tools.ietf.org/html/rfc7233">RFC 7233</a>:</strong> Hypertext Transfer Protocol (HTTP/1.1): Range Requests</p>
-</li>
-<li>
-<p><strong><a href="https://tools.ietf.org/html/rfc7234">RFC 7234</a>:</strong> Hypertext Transfer Protocol (HTTP/1.1): Caching</p>
-</li>
-<li>
-<p><strong><a href="https://tools.ietf.org/html/rfc7240">RFC 7240</a>:</strong> Prefer Header for HTTP</p>
-</li>
-<li>
-<p><strong><a href="https://tools.ietf.org/html/rfc7396">RFC 7396</a>:</strong> JSON Merge Patch</p>
-</li>
-<li>
-<p><strong><a href="https://tools.ietf.org/html/rfc7807">RFC 7807</a>:</strong> Problem Details for HTTP APIs</p>
-</li>
-<li>
-<p><strong><a href="https://tools.ietf.org/html/rfc4648">RFC 4648</a>:</strong> The Base16, Base32, and Base64 Data Encodings</p>
-</li>
-<li>
-<p><strong><a href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601</a>:</strong> Date and time format</p>
-</li>
-<li>
-<p><strong><a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO 3166-1 alpha-2</a>:</strong> Two letter country codes</p>
-</li>
-<li>
-<p><strong><a href="https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes">ISO 639-1</a>:</strong> Two letter language codes</p>
-</li>
-<li>
-<p><strong><a href="https://en.wikipedia.org/wiki/ISO_4217">ISO 4217</a>:</strong> Currency codes</p>
-</li>
-<li>
-<p><strong><a href="https://tools.ietf.org/html/bcp47">BCP 47</a>:</strong> Tags for Identifying Languages</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="dissertations"><a class="link" href="#dissertations">Dissertations</a></h3>
-<div class="ulist">
-<ul>
-<li>
-<p><strong><a href="http://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm">Roy Thomas
-Fielding - Architectural Styles and the Design of Network-Based Software
-Architectures</a>:</strong> This is the text which defines what REST is.</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="books"><a class="link" href="#books">Books</a></h3>
-<div class="ulist">
-<ul>
-<li>
-<p><strong><a href="http://www.amazon.de/REST-Practice-Hypermedia-Systems-Architecture/dp/0596805829">REST in Practice: Hypermedia and Systems Architecture</a></strong></p>
-</li>
-<li>
-<p><strong><a href="https://leanpub.com/build-apis-you-wont-hate">Build APIs You Won&#8217;t Hate</a></strong></p>
-</li>
-<li>
-<p><strong><a href="http://www.infoq.com/minibooks/emag-web-api">InfoQ eBook - Web APIs: From Start to Finish</a></strong></p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect2">
-<h3 id="blogs"><a class="link" href="#blogs">Blogs</a></h3>
-<div class="ulist">
-<ul>
-<li>
-<p><strong><a href="http://restful-api-design.readthedocs.org/en/latest/">Lessons-learned blog: Thoughts on RESTful API Design</a></strong></p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="appendix-tooling"><a class="link" href="#appendix-tooling">Appendix B: Tooling</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>This is not a part of the actual guidelines, but might be helpful for following them.
-Using a tool mentioned here doesn&#8217;t automatically ensure you follow the guidelines.</p>
-</div>
-<div class="sect2">
-<h3 id="api-first-integrations"><a class="link" href="#api-first-integrations">API first integrations</a></h3>
-<div class="paragraph">
-<p>The following frameworks were specifically designed to support the API First
-workflow with Open API YAML files (sorted alphabetically):</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><strong><a href="https://github.com/zalando/connexion">Connexion</a>:</strong>
-Open API First framework for Python on top of Flask</p>
-</li>
-<li>
-<p><strong><a href="https://github.com/zalando-stups/friboo">Friboo</a>:</strong>
-utility library to write microservices in Clojure with support for Swagger and OAuth</p>
-</li>
-<li>
-<p><strong><a href="https://github.com/zalando/api-first-hand">Api-First-Hand</a>:</strong>
-API-First Play Bootstrapping Tool for Swagger/Open API specs</p>
-</li>
-<li>
-<p><strong><a href="https://github.com/swagger-api/swagger-codegen">Swagger Codegen</a>:</strong>
-template-driven engine to generate client code in different languages by
-parsing Swagger Resource Declaration</p>
-</li>
-<li>
-<p><strong><a href="https://github.com/zalando-stups/swagger-codegen-tooling">Swagger Codegen Tooling</a>:</strong>
-plugin for Maven that generates pieces of code from Open API specification</p>
-</li>
-<li>
-<p><strong><a href="https://github.com/zalando/intellij-swagger">Swagger Plugin for IntelliJ IDEA</a>:</strong>
-plugin to help you easily edit Swagger specification files inside IntelliJ IDEA</p>
-</li>
-</ul>
+<p>An API is published by copying its <strong>Open API specification</strong> into the reserved
+<strong>/zalando-apis</strong> directory of the <strong>deployment artifact</strong> used to deploy the
+provisioning service. The directory must only contain <strong>self-contained YAML</strong>
+<strong>files</strong> that each describe one API (exception see <a href="#234">[234]</a>). We prefer this
+deployment artifact-based method over the past (now legacy)
+<code>.well-known/schema-discovery</code> service endpoint-based publishing process, that
+we only support for backward compatibility reasons.</p>
 </div>
 <div class="paragraph">
-<p>The Swagger/Open API homepage lists more
-<a href="http://swagger.io/open-source-integrations/">Community-Driven Language
-Integrations</a>, but most of them do not fit our API First approach.</p>
-</div>
-</div>
-<div class="sect2">
-<h3 id="support-libraries"><a class="link" href="#support-libraries">Support libraries</a></h3>
-<div class="paragraph">
-<p>These utility libraries support you in implementing various parts of our
-RESTful API guidelines (sorted alphabetically):</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p><strong><a href="https://github.com/zalando/problem">Problem</a>:</strong>
-Java library that implements application/problem+json</p>
-</li>
-<li>
-<p><strong><a href="https://github.com/zalando/problem-spring-web">Problems for Spring Web MVC</a>:</strong>
-library for handling Problems in Spring Web MVC</p>
-</li>
-<li>
-<p><strong><a href="https://github.com/zalando/jackson-datatype-money">Jackson Datatype Money</a>:</strong>
-extension module to properly support datatypes of javax.money</p>
-</li>
-<li>
-<p><strong><a href="https://github.com/zalando/tracer">Tracer</a>:</strong>
-call tracing and log correlation in distributed systems</p>
-</li>
-<li>
-<p><strong><a href="https://github.com/zalando/twintip-spring-web">TWINTIP Spring Integration</a>:</strong>
-API discovery endpoint for Spring Web MVC</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="appendix-best-practices"><a class="link" href="#appendix-best-practices">Appendix C: Best practices</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>The best practices presented in this section are not part of the actual
-guidelines, but should provide guidance for common challenges we face when
-implementing RESTful APIs.</p>
-</div>
-<div class="sect2">
-<h3 id="optimistic-locking"><a class="link" href="#optimistic-locking">Optimistic locking in RESTful APIs</a></h3>
-<div class="sect3">
-<h4 id="_introduction"><a class="link" href="#_introduction">Introduction</a></h4>
-<div class="paragraph">
-<p>Optimistic locking might be used to avoid concurrent writes on the same entity,
-which might cause data loss. A client always has to retrieve a copy of an
-entity first and specifically update this one. If another version has been
-created in the meantime, the update should fail. In order to make this work,
-the client has to provide some kind of version reference, which is checked by
-the service, before the update is executed. Please read the more detailed
-description on how to update resources via <a href="#put"><code>PUT</code></a> in the <a href="#put">HTTP Requests
-Section</a>.</p>
+<p>Background: In our dynamic and complex service infrastructure, it is important
+to provide API client developers a central place with online access to the API
+specifications of all running applications. As a part of the infrastructure,
+the API publishing process is used to detect API specifications. The findings
+are published in the API Portal - the universal hub for all Zalando APIs.</p>
 </div>
 <div class="paragraph">
-<p>A RESTful API usually includes some kind of search endpoint, which will then
-return a list of result entities. There are several ways to implement
-optimistic locking in combination with search endpoints which, depending on the
-approach chosen, might lead to performing additional requests to get the
-current version of the entity that should be updated.</p>
+<p><strong>Note:</strong> To publish an API, it is still necessary to deploy the artifact
+successful, as we focus the discovery experience on APIs supported by running
+services.</p>
 </div>
-</div>
-<div class="sect3">
-<h4 id="_etag_with_if_match_header"><a class="link" href="#_etag_with_if_match_header"><code>ETag</code> with <code>If-Match</code> header</a></h4>
-<div class="paragraph">
-<p>An <a href="https://tools.ietf.org/html/rfc7232#section-2.3"><code>ETag</code></a> can only be obtained by performing a <a href="#get"><code>GET</code></a> request on the single
-entity resource before the update, i.e. when using a search endpoint an
-additional request is necessary.</p>
-</div>
-<div class="paragraph">
-<p>Example:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="http">&lt; GET /orders
-
-&gt; HTTP/1.1 200 OK
-&gt; {
-&gt;   &quot;items&quot;: [
-&gt;     { &quot;id&quot;: &quot;O0000042&quot; },
-&gt;     { &quot;id&quot;: &quot;O0000043&quot; }
-&gt;   ]
-&gt; }
-
-&lt; GET /orders/BO0000042
-
-&gt; HTTP/1.1 200 OK
-&gt; ETag: osjnfkjbnkq3jlnksjnvkjlsbf
-&gt; { &quot;id&quot;: &quot;BO0000042&quot;, ... }
-
-&lt; PUT /orders/O0000042
-&lt; If-Match: osjnfkjbnkq3jlnksjnvkjlsbf
-&lt; { &quot;id&quot;: &quot;O0000042&quot;, ... }
-
-&gt; HTTP/1.1 204 No Content</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Or, if there was an update since the <a href="#get"><code>GET</code></a> and the entity&#8217;s <a href="https://tools.ietf.org/html/rfc7232#section-2.3"><code>ETag</code></a> has changed:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="http">&gt; HTTP/1.1 412 Precondition failed</code></pre>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_pros"><a class="link" href="#_pros">Pros</a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p>RESTful solution</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_cons"><a class="link" href="#_cons">Cons</a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p>Many additional requests are necessary to build a meaningful front-end</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="etag-in-result-entities"><a class="link" href="#etag-in-result-entities"><code>ETags</code> in result entities</a></h4>
-<div class="paragraph">
-<p>The ETag for every entity is returned as an additional property of that entity.
-In a response containing multiple entities, every entity will then have a
-distinct <a href="https://tools.ietf.org/html/rfc7232#section-2.3"><code>ETag</code></a> that can be used in subsequent <a href="#put"><code>PUT</code></a> requests.</p>
-</div>
-<div class="paragraph">
-<p>In this solution, the <code>etag</code> property should be <code>readonly</code> and never be expected
-in the <a href="#put"><code>PUT</code></a> request payload.</p>
-</div>
-<div class="paragraph">
-<p>Example:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="http">&lt; GET /orders
-
-&gt; HTTP/1.1 200 OK
-&gt; {
-&gt;   &quot;items&quot;: [
-&gt;     { &quot;id&quot;: &quot;O0000042&quot;, &quot;etag&quot;: &quot;osjnfkjbnkq3jlnksjnvkjlsbf&quot;, &quot;foo&quot;: 42, &quot;bar&quot;: true },
-&gt;     { &quot;id&quot;: &quot;O0000043&quot;, &quot;etag&quot;: &quot;kjshdfknjqlowjdsljdnfkjbkn&quot;, &quot;foo&quot;: 24, &quot;bar&quot;: false }
-&gt;   ]
-&gt; }
-
-&lt; PUT /orders/O0000042
-&lt; If-Match: osjnfkjbnkq3jlnksjnvkjlsbf
-&lt; { &quot;id&quot;: &quot;O0000042&quot;, &quot;foo&quot;: 43, &quot;bar&quot;: true }
-
-&gt; HTTP/1.1 204 No Content</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Or, if there was an update since the <a href="#get"><code>GET</code></a> and the entity&#8217;s <a href="https://tools.ietf.org/html/rfc7232#section-2.3"><code>ETag</code></a> has changed:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="http">&gt; HTTP/1.1 412 Precondition failed</code></pre>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_pros_2"><a class="link" href="#_pros_2">Pros</a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p>Perfect optimistic locking</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_cons_2"><a class="link" href="#_cons_2">Cons</a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p>Information that only belongs in the HTTP header is part of the business
-objects</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_version_numbers"><a class="link" href="#_version_numbers">Version numbers</a></h4>
-<div class="paragraph">
-<p>The entities contain a property with a version number. When an update is
-performed, this version number is given back to the service as part of the
-payload. The service performs a check on that version number to make sure it
-was not incremented since the consumer got the resource and performs the
-update, incrementing the version number.</p>
-</div>
-<div class="paragraph">
-<p>Since this operation implies a modification of the resource by the service, a
-<a href="#post"><code>POST</code></a> operation on the exact resource (e.g. <code>POST /orders/O0000042</code>) should be
-used instead of a <a href="#put"><code>PUT</code></a>.</p>
-</div>
-<div class="paragraph">
-<p>In this solution, the <code>version</code> property is not <code>readonly</code> since it is provided
-at <a href="#post"><code>POST</code></a> time as part of the payload.</p>
-</div>
-<div class="paragraph">
-<p>Example:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="http">&lt; GET /orders
-
-&gt; HTTP/1.1 200 OK
-&gt; {
-&gt;   &quot;items&quot;: [
-&gt;     { &quot;id&quot;: &quot;O0000042&quot;, &quot;version&quot;: 1,  &quot;foo&quot;: 42, &quot;bar&quot;: true },
-&gt;     { &quot;id&quot;: &quot;O0000043&quot;, &quot;version&quot;: 42, &quot;foo&quot;: 24, &quot;bar&quot;: false }
-&gt;   ]
-&gt; }
-
-&lt; POST /orders/O0000042
-&lt; { &quot;id&quot;: &quot;O0000042&quot;, &quot;version&quot;: 1, &quot;foo&quot;: 43, &quot;bar&quot;: true }
-
-&gt; HTTP/1.1 204 No Content</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>or if there was an update since the <a href="#get"><code>GET</code></a> and the version number in the
-database is higher than the one given in the request body:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="http">&gt; HTTP/1.1 409 Conflict</code></pre>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_pros_3"><a class="link" href="#_pros_3">Pros</a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p>Perfect optimistic locking</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_cons_3"><a class="link" href="#_cons_3">Cons</a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p>Functionality that belongs into the HTTP header becomes part of the
-business object</p>
-</li>
-<li>
-<p>Using <a href="#post"><code>POST</code></a> instead of PUT for an update logic (not a problem in itself,
-but may feel unusual for the consumer)</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_last_modified_if_unmodified_since"><a class="link" href="#_last_modified_if_unmodified_since"><code>Last-Modified</code> / <code>If-Unmodified-Since</code></a></h4>
-<div class="paragraph">
-<p>In HTTP 1.0 there was no <a href="https://tools.ietf.org/html/rfc7232#section-2.3"><code>ETag</code></a> and the mechanism used for optimistic locking
-was based on a date. This is still part of the HTTP protocol and can be used.
-Every response contains a <a href="https://tools.ietf.org/html/rfc7232#section-2.2"><code>Last-Modified</code></a> header with a HTTP date. When
-requesting an update using a <a href="#put"><code>PUT</code></a> request, the client has to provide this
-value via the header <a href="https://tools.ietf.org/html/rfc7232#section-3.4"><code>If-Unmodified-Since</code></a>. The server rejects the request, if
-the last modified date of the entity is after the given date in the header.</p>
-</div>
-<div class="paragraph">
-<p>This effectively catches any situations where a change that happened between
-<a href="#get"><code>GET</code></a> and <a href="#put"><code>PUT</code></a> would be overwritten. In the case of multiple result entities,
-the <a href="https://tools.ietf.org/html/rfc7232#section-2.2"><code>Last-Modified</code></a> header will be set to the latest date of all the entities.
-This ensures that any change to any of the entities that happens between <a href="#get"><code>GET</code></a>
-and <a href="#put"><code>PUT</code></a> will be detectable, without locking the rest of the batch as well.</p>
-</div>
-<div class="paragraph">
-<p>Example:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="http">&lt; GET /orders
-
-&gt; HTTP/1.1 200 OK
-&gt; Last-Modified: Wed, 22 Jul 2009 19:15:56 GMT
-&gt; {
-&gt;   &quot;items&quot;: [
-&gt;     { &quot;id&quot;: &quot;O0000042&quot;, ... },
-&gt;     { &quot;id&quot;: &quot;O0000043&quot;, ... }
-&gt;   ]
-&gt; }
-
-&lt; PUT /block/O0000042
-&lt; If-Unmodified-Since: Wed, 22 Jul 2009 19:15:56 GMT
-&lt; { &quot;id&quot;: &quot;O0000042&quot;, ... }
-
-&gt; HTTP/1.1 204 No Content</code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Or, if there was an update since the <a href="#get"><code>GET</code></a> and the entities last modified is
-later than the given date:</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="http">&gt; HTTP/1.1 412 Precondition failed</code></pre>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_pros_4"><a class="link" href="#_pros_4">Pros</a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p>Well established approach that has been working for a long time</p>
-</li>
-<li>
-<p>No interference with the business objects; the locking is done via HTTP
-headers only</p>
-</li>
-<li>
-<p>Very easy to implement</p>
-</li>
-<li>
-<p>No additional request needed when updating an entity of a search endpoint
-result</p>
-</li>
-</ul>
-</div>
-</div>
-<div class="sect4">
-<h5 id="_cons_4"><a class="link" href="#_cons_4">Cons</a></h5>
-<div class="ulist">
-<ul>
-<li>
-<p>If a client communicates with two different instances and their clocks are
-not perfectly in sync, the locking could potentially fail</p>
-</li>
-</ul>
-</div>
-</div>
-</div>
-<div class="sect3">
-<h4 id="_conclusion"><a class="link" href="#_conclusion">Conclusion</a></h4>
-<div class="paragraph">
-<p>We suggest to either use the <em><a href="https://tools.ietf.org/html/rfc7232#section-2.3"><code>ETag</code></a> in result entities</em> or <em><a href="https://tools.ietf.org/html/rfc7232#section-2.2"><code>Last-Modified</code></a>
-/ <a href="https://tools.ietf.org/html/rfc7232#section-3.4"><code>If-Unmodified-Since</code></a></em> approach.</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="appendix-changelog"><a class="link" href="#appendix-changelog">Appendix D: Changelog</a></h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>This change log only contains major changes compared with Zalando Guidelines [Last updated 2020-03-19 06:48:12 UTC].</p>
-</div>
-<div class="paragraph">
-<p>Non-major changes are editorial-only changes or minor changes of existing guidelines, e.g. adding new error code.
-Major changes are changes that come with additional obligations, or even change an existing guideline obligation.
-The latter changes are additionally labeled with "Rule Change" here.</p>
-</div>
-<div class="paragraph">
-<p>To see a list of all changes, please have a look at the <a href="https://github.com/f-fabre/sismage-apollo-restful-api-guidelines/commits/master">commit list in Github</a>.</p>
-</div>
-<div class="sect2">
-<h3 id="rule-changes"><a class="link" href="#rule-changes">Rule Changes</a></h3>
-<div class="ulist">
-<ul>
-<li>
-<p><code>2020-04-07:</code> Removed chapters "Proprietary Headers" and "Events"</p>
-</li>
-<li>
-<p><code>2020-04-07:</code> Added rule <span class="must-keyword"><strong>MUST</strong></span> not use URI versioning within OpenAPI Specification <a href="#1003">[1003]</a></p>
-</li>
-<li>
-<p><code>2020-04-07:</code> Added rule  <span class="must-keyword"><strong>MUST</strong></span> use URI versioning at deployment level ONLY <a href="#1002">[1002]</a></p>
-</li>
-<li>
-<p><code>2020-04-06:</code> Added chapter "Key principles"</p>
-</li>
-<li>
-<p><code>2020-04-05:</code> Introduced the changelog. From now on all rule changes on API guidelines will be recorded here.</p>
-</li>
-<li>
-<p><code>2019-01-24:</code> From Zalando Guidelines - <a href="https://opensource.zalando.com/restful-api-guidelines/#appendix-changelog" class="bare">https://opensource.zalando.com/restful-api-guidelines/#appendix-changelog</a></p>
-</li>
-</ul>
-</div>
-<!-- Adds rule id as a postfix to all rule titles -->
-<script>
-var ruleIdRegEx = /(\d)+/;
-var h3headers = document.getElementsByTagName("h3");
-for (var i = 0; i < h3headers.length; i++) {
-    var header = h3headers[i];
-    if (header.id && header.id.match(ruleIdRegEx)) {
-        var a = header.getElementsByTagName("a")[0]
-        a.innerHTML += " [" + header.id + "]";
-    }
-}
-</script>
-
-<!-- Add table of contents anchor and remove document title -->
-<script>
-var toc = document.getElementById('toc');
-var div = document.createElement('div');
-div.id = 'table-of-contents';
-toc.parentNode.replaceChild(div, toc);
-div.appendChild(toc);
-var ul = toc.childNodes[3];
-ul.removeChild(ul.childNodes[1]);
-</script>
-
-<!-- Adds sidebar navigation -->
-<script>
-var header = document.getElementById('header');
-var nav = document.createElement('div');
-nav.id = 'toc';
-nav.classList.add('toc2');
-var title = document.createElement('div');
-title.id = 'toctitle';
-
-var link = document.createElement('a');
-link.innerText = 'API Guidelines';
-link.href = '#';
-
-title.append(link);
-nav.append(title);
-
-var ul = document.createElement('ul');
-ul.classList.add('sectlevel1');
-
-var link = document.createElement('a');
-link.innerHTML = 'Table of Contents';
-link.href = '#table-of-contents';
-li = document.createElement('li');
-li.append(link);
-ul.append(li);
-
-var link, li;
-var h2headers = document.getElementsByTagName('h2');
-for (var i = 1; i < h2headers.length; i++) {
-    var a = h2headers[i].getElementsByTagName("a")[0];
-    if (a !== undefined) {
-        link = document.createElement('a');
-        link.innerHTML = a.innerHTML;
-        link.href = a.hash;
-        li = document.createElement('li');
-        li.append(link);
-        ul.append(li);
-    }
-}
-
-document.body.classList.add('toc2');
-document.body.classList.add('toc-left');
-nav.append(ul);
-header.prepend(nav);
-</script>
 </div>
 </div>
 </div>
@@ -7571,7 +6907,7 @@ header.prepend(nav);
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-04-12 07:03:23 UTC
+Last updated 2020-04-13 20:17:19 UTC
 </div>
 </div>
 <style>
