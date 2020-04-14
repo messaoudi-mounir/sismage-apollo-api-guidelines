@@ -7484,26 +7484,122 @@ Major changes are changes that come with additional obligations, or even change 
 The latter changes are additionally labeled with "Rule Change" here.</p>
 </div>
 <div class="paragraph">
-<p>To see a list of all changes, please have a look at the <a href="https://github.com/f-fabre/sismage-apollo-restful-api-guidelines/commits/master">commit list in Github</a>.</p>
+<p>To see a list of all changes, please have a look at the <a href="https://github.com/f-fabre/sismage-apollo-restful-api-guidelines/commits/master">commit list in Github[internal link</a>].</p>
 </div>
 <div class="sect2">
 <h3 id="rule-changes"><a class="link" href="#rule-changes">Rule Changes</a></h3>
 <div class="ulist">
 <ul>
 <li>
+<p><code>2020-04-14:</code> Adapted rule <span class="may-keyword"><strong>MAY</strong></span> use problem JSON <a href="#176">[176]</a> to dereference Zalando problem schema</p>
+</li>
+<li>
+<p><code>2020-04-14:</code> Changed rule <span class="must-keyword"><strong>MUST</strong></span> to <span class="may-keyword"><strong>MAY</strong></span> use problem JSON <a href="#176">[176]</a></p>
+</li>
+<li>
+<p><code>2020-04-08:</code> Changed rule <span class="must-keyword"><strong>MUST</strong></span> to <span class="should-keyword"><strong>SHOULD</strong></span> document cachable <code>GET</code>, <code>HEAD</code>, and <code>POST</code> endpoints <a href="#227">[227]</a></p>
+</li>
+<li>
+<p><code>2020-04-08:</code> Changed rule <span class="must-keyword"><strong>MUST</strong></span> to <span class="should-keyword"><strong>SHOULD</strong></span> use URL-friendly resource identifiers: [a-zA-Z0-9:._\-/]* <a href="#228">[228]</a></p>
+</li>
+<li>
+<p><code>2020-04-08:</code> Changed rule <span class="must-keyword"><strong>MUST</strong></span> to <span class="should-keyword"><strong>SHOULD</strong></span> use common field names and semantics <a href="#174">[174]</a></p>
+</li>
+<li>
+<p><code>2020-04-08:</code> Changed rule <span class="must-keyword"><strong>MUST</strong></span> to <span class="may-keyword"><strong>MAY</strong></span> name date/time properties with <code>_at</code> suffix <a href="#235">[235]</a></p>
+</li>
+<li>
+<p><code>2020-04-08:</code> Changed rule <span class="must-keyword"><strong>MUST</strong></span> to <span class="should-keyword"><strong>SHOULD</strong></span> use same semantics for <code>null</code> and absent properties <a href="#123">[123]</a></p>
+</li>
+<li>
+<p><code>2020-04-08:</code> Added rule <span class="must-keyword"><strong>MUST</strong></span> not use URI versioning within OpenAPI Specification <a href="#1003">[1003]</a></p>
+</li>
+<li>
+<p><code>2020-04-08:</code> Added rule  <span class="must-keyword"><strong>MUST</strong></span> use URI versioning at deployment level ONLY <a href="#1002">[1002]</a></p>
+</li>
+<li>
+<p><code>2020-04-08:</code> Removed rule <span class="must-keyword"><strong>MUST</strong></span> not use URI versioning <a href="#115">[115]</a></p>
+</li>
+<li>
+<p><code>2020-04-08:</code> Removed rule <span class="must-keyword"><strong>MUST</strong></span> design APIs conservatively <a href="#109">[109]</a></p>
+</li>
+<li>
+<p><code>2020-04-08:</code> Removed rule <span class="must-keyword"><strong>MUST</strong></span> prepare clients accept compatible API extensions <a href="#108">[108]</a></p>
+</li>
+<li>
+<p><code>2020-04-08:</code> Removed rule <span class="must-keyword"><strong>MUST</strong></span> follow naming convention for permissions (scopes) <a href="#225">[225]</a></p>
+</li>
+<li>
 <p><code>2020-04-07:</code> Removed chapters "Proprietary Headers" and "Events"</p>
 </li>
 <li>
-<p><code>2020-04-07:</code> Added rule <span class="must-keyword"><strong>MUST</strong></span> not use URI versioning within OpenAPI Specification <a href="#1003">[1003]</a></p>
+<p><code>2020-04-07:</code> Added chapter "Key principles"</p>
 </li>
 <li>
-<p><code>2020-04-07:</code> Added rule  <span class="must-keyword"><strong>MUST</strong></span> use URI versioning at deployment level ONLY <a href="#1002">[1002]</a></p>
+<p><code>2020-04-06:</code> Changed rule <span class="must-keyword"><strong>MUST</strong></span> to <span class="should-keyword"><strong>SHOULD</strong></span> use code 429 with headers for rate limits <a href="#153">[153]</a></p>
 </li>
 <li>
-<p><code>2020-04-06:</code> Added chapter "Key principles"</p>
+<p><code>2020-04-06:</code> Changed rule <span class="must-keyword"><strong>MUST</strong></span> to <span class="should-keyword"><strong>SHOULD</strong></span> use code 207 for batch or bulk requests <a href="#152">[152]</a></p>
 </li>
 <li>
-<p><code>2020-04-05:</code> Introduced the changelog. From now on all rule changes on API guidelines will be recorded here.</p>
+<p><code>2020-04-03:</code> Changed rule <span class="must-keyword"><strong>MUST</strong></span> to <span class="should-keyword"><strong>SHOULD</strong></span> support pagination <a href="#159">[159]</a></p>
+</li>
+<li>
+<p><code>2020-04-03:</code> Changed rule <span class="must-keyword"><strong>MUST</strong></span> to <span class="should-keyword"><strong>SHOULD</strong></span> not expose stack traces <a href="#177">[177]</a></p>
+</li>
+<li>
+<p><code>2020-04-03:</code> Changed rule <span class="must-keyword"><strong>MUST</strong></span> to <span class="may-keyword"><strong>MAY</strong></span> use most specific HTTP status codes <a href="#220">[220]</a></p>
+</li>
+<li>
+<p><code>2020-04-03:</code> Changed rule <span class="must-keyword"><strong>MUST</strong></span> to <span class="should-keyword"><strong>SHOULD</strong></span> document implicit filtering <a href="#226">[226]</a></p>
+</li>
+<li>
+<p><code>2020-04-03:</code> Changed rule <span class="must-keyword"><strong>MUST</strong></span> to <span class="should-keyword"><strong>SHOULD</strong></span> fulfill common method properties <a href="#149">[149]</a></p>
+</li>
+<li>
+<p><code>2020-04-03:</code> Changed rule <span class="must-keyword"><strong>MUST</strong></span> to <span class="should-keyword"><strong>SHOULD</strong></span> use domain-specific resource names <a href="#142">[142]</a></p>
+</li>
+<li>
+<p><code>2020-04-03:</code> Changed rule <span class="must-keyword"><strong>MUST</strong></span>/<span class="should-keyword"><strong>SHOULD</strong></span> to <span class="should-keyword"><strong>SHOULD</strong></span> use functional naming schema <a href="#223">[223]</a></p>
+</li>
+<li>
+<p><code>2020-04-01:</code> Changed rule <span class="must-keyword"><strong>MUST</strong></span> to <span class="should-keyword"><strong>SHOULD</strong></span> stick to conventional query parameters <a href="#137">[137]</a></p>
+</li>
+<li>
+<p><code>2020-04-01:</code> Added rule <span class="should-keyword"><strong>SHOULD</strong></span> use common objects <a href="#1004">[1004]</a></p>
+</li>
+<li>
+<p><code>2020-04-01:</code> Removed rule <span class="must-keyword"><strong>MUST</strong></span> use the common money object <a href="#173">[173]</a></p>
+</li>
+<li>
+<p><code>2020-04-01:</code> Removed rule <span class="should-keyword"><strong>SHOULD</strong></span> add monitoring for <code>Deprecation</code> and <code>Sunset</code> header <a href="#190">[190]</a></p>
+</li>
+<li>
+<p><code>2020-04-01:</code> Changed rule <span class="should-keyword"><strong>SHOULD</strong></span> to <span class="may-keyword"><strong>MAY</strong></span> add <code>Deprecation</code> and <code>Sunset</code> header to responses <a href="#189">[189]</a></p>
+</li>
+<li>
+<p><code>2020-04-01:</code> Changed rule <span class="must-keyword"><strong>MUST</strong></span> to <span class="should-keyword"><strong>SHOULD</strong></span> obtain approval of clients before API shut down <a href="#185">[185]</a></p>
+</li>
+<li>
+<p><code>2020-04-01:</code> Changed rule <span class="must-keyword"><strong>MUST</strong></span> to <span class="should-keyword"><strong>SHOULD</strong></span> treat Open API specification as open for extension by default <a href="#111">[111]</a></p>
+</li>
+<li>
+<p><code>2020-04-01:</code> Changed rule <span class="must-keyword"><strong>MUST</strong></span> to <span class="should-keyword"><strong>SHOULD</strong></span> not break backward compatibility <a href="#106">[106]</a></p>
+</li>
+<li>
+<p><code>2020-04-01:</code> Changed rule <span class="must-keyword"><strong>MUST</strong></span> to <span class="should-keyword"><strong>SHOULD</strong></span> define and assign permissions (scopes) <a href="#105">[105]</a></p>
+</li>
+<li>
+<p><code>2020-03-27:</code> Adapted rule <span class="must-keyword"><strong>MUST</strong></span> provide API identifiers <strong>for "company-internal" audience</strong> <a href="#215">[215]</a></p>
+</li>
+<li>
+<p><code>2020-03-27:</code> Removed rule <span class="must-keyword"><strong>MUST</strong></span> use media type versioning <a href="#114">[114]</a></p>
+</li>
+<li>
+<p><code>2020-03-27:</code> Removed rule <span class="should-keyword"><strong>SHOULD</strong></span> avoid versioning <a href="#113">[113]</a></p>
+</li>
+<li>
+<p><code>2020-03-27:</code> Introduced the changelog. From now on all rule changes on API guidelines will be recorded here.</p>
 </li>
 <li>
 <p><code>2019-01-24:</code> From Zalando Guidelines - <a href="https://opensource.zalando.com/restful-api-guidelines/#appendix-changelog" class="bare">https://opensource.zalando.com/restful-api-guidelines/#appendix-changelog</a></p>
@@ -7591,7 +7687,7 @@ header.prepend(nav);
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-04-13 21:56:07 UTC
+Last updated 2020-04-14 06:15:03 UTC
 </div>
 </div>
 <style>
