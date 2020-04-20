@@ -457,22 +457,17 @@ ones about values.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="118">{MUST} property names must be ASCII snake_case (and never camelCase): <code>^[a-z_][a-z_0-9]*$</code></h2>
+<h2 id="118">{MUST} property names must be ASCII camelCase</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Property names are restricted to ASCII strings. The first
-character must be a letter, or an underscore, and subsequent
-characters can be a letter, an underscore, or a number.</p>
+<p>Property names are restricted to ASCII strings. SISMAGE API and Apollo uses camel case convention
+for property names, where the first word of a property is lowercase, and all additional words in
+the name are capitalized.</p>
 </div>
 <div class="paragraph">
-<p>(It is recommended to use <code>_</code> at the start of property names only for keywords like <code>_links</code>.)</p>
-</div>
-<div class="paragraph">
-<p>Rationale: No established industry standard exists, but many popular Internet
-companies prefer snake_case: e.g. GitHub, Stack Exchange, Twitter.
-Others, like Google and Amazon, use both - but not only camelCase. It’s
-essential to establish a consistent look and feel such that JSON looks
-as if it came from the same hand.</p>
+<p>Rationale: SISMAGE API &amp; Apollo decided to use camelCase because this naming convention is used by
+many popular Internet companies like Google and Amazon and because camelCase is quite similar to
+PascalCase (used in Oils &amp; Gas industry standards like Energistics). It’s essential to establish a consistent look and feel such that JSON looks as if it came from the same hand.</p>
 </div>
 </div>
 </div>
@@ -764,7 +759,7 @@ be strings formatted as recommended by {ISO-8601}[ISO 8601]({RFC-3339}#appendix-
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-04-14 07:17:01 UTC
+Last updated 2020-04-20 12:51:54 UTC
 </div>
 </div>
 </body>
