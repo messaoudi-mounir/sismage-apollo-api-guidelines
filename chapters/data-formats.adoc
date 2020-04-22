@@ -39,7 +39,7 @@ Other media types may be used in following cases:
 
 
 [#239]
-=== {SHOULD} encode embedded binary data in `base64url`
+== {SHOULD} encode embedded binary data in `base64url`
 
 Exposing binary data using an alternative media type is generally preferred.
 See <<168,the rule above>>.

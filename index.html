@@ -1512,6 +1512,7 @@ establish "consistent API look and feel" quality.
 <ul class="sectlevel2">
 <li><a href="#167"><span class="must-keyword"><strong>MUST</strong></span> use JSON to encode structured data</a></li>
 <li><a href="#168"><span class="may-keyword"><strong>MAY</strong></span> use non JSON media types for binary data or alternative content representations</a></li>
+<li><a href="#239"><span class="should-keyword"><strong>SHOULD</strong></span> encode embedded binary data in <code>base64url</code></a></li>
 <li><a href="#172"><span class="should-keyword"><strong>SHOULD</strong></span> prefer standard media type name <code>application/json</code></a></li>
 <li><a href="#238"><span class="should-keyword"><strong>SHOULD</strong></span> use standardized property formats</a></li>
 <li><a href="#169"><span class="must-keyword"><strong>MUST</strong></span> use standard date and time formats</a></li>
@@ -3212,8 +3213,9 @@ PDF, DOC, XML) may be made available through content negotiation.</p>
 </li>
 </ul>
 </div>
-<div class="sect3">
-<h4 id="239"><a class="link" href="#239"><span class="should-keyword"><strong>SHOULD</strong></span> encode embedded binary data in <code>base64url</code></a></h4>
+</div>
+<div class="sect2">
+<h3 id="239"><a class="link" href="#239"><span class="should-keyword"><strong>SHOULD</strong></span> encode embedded binary data in <code>base64url</code></a></h3>
 <div class="paragraph">
 <p>Exposing binary data using an alternative media type is generally preferred.
 See <a href="#168">the rule above</a>.</p>
@@ -3222,7 +3224,6 @@ See <a href="#168">the rule above</a>.</p>
 <p>If an alternative content representation is not desired then binary data should
 be embedded into the JSON document as a <code>base64url</code>-encoded string property
 following <a href="https://tools.ietf.org/html/rfc7493#section-4.4">RFC 7493 Section 4.4</a>.</p>
-</div>
 </div>
 </div>
 <div class="sect2">
@@ -7735,7 +7736,7 @@ header.prepend(nav);
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-04-22 20:53:27 UTC
+Last updated 2020-04-22 20:56:04 UTC
 </div>
 </div>
 <style>
