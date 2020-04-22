@@ -1357,6 +1357,7 @@ establish "consistent API look and feel" quality.
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Compatibility</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="must-keyword"><strong>MUST</strong></span> always return JSON objects as top-level data structures <a href="#110">[110]</a></p>
+<p class="tableblock"><span class="must-keyword"><strong>MUST</strong></span> treat Open API specification as open for extension by default <a href="#111">[111]</a></p>
 <p class="tableblock"><span class="must-keyword"><strong>MUST</strong></span> use URI versioning at deployment level <strong>ONLY</strong> <a href="#1002">[1002]</a></p>
 <p class="tableblock"><span class="must-keyword"><strong>MUST</strong></span> not use URI versioning within OpenAPI Specification <a href="#1003">[1003]</a></p></td>
 </tr>
@@ -1460,6 +1461,7 @@ establish "consistent API look and feel" quality.
 <li><a href="#116"><span class="must-keyword"><strong>MUST</strong></span> use semantic versioning</a></li>
 <li><a href="#215"><span class="must-keyword"><strong>MUST</strong></span> provide API identifiers for "company-internal" audience</a></li>
 <li><a href="#219"><span class="must-keyword"><strong>MUST</strong></span> provide API audience</a></li>
+<li><a href="#1005"><span class="must-keyword"><strong>MUST</strong></span> provide API unit catalog</a></li>
 </ul>
 </li>
 <li><a href="#security">6. Security</a>
@@ -1473,7 +1475,7 @@ establish "consistent API look and feel" quality.
 <li><a href="#106"><span class="should-keyword"><strong>SHOULD</strong></span> not break backward compatibility</a></li>
 <li><a href="#107"><span class="should-keyword"><strong>SHOULD</strong></span> prefer compatible extensions</a></li>
 <li><a href="#110"><span class="must-keyword"><strong>MUST</strong></span> always return JSON objects as top-level data structures</a></li>
-<li><a href="#111"><span class="should-keyword"><strong>SHOULD</strong></span> treat Open API specification as open for extension by default</a></li>
+<li><a href="#111"><span class="must-keyword"><strong>MUST</strong></span> treat Open API specification as open for extension by default</a></li>
 <li><a href="#112"><span class="should-keyword"><strong>SHOULD</strong></span> used open-ended list of values (<code>x-extensible-enum</code>) for enumerations</a></li>
 <li><a href="#1002"><span class="must-keyword"><strong>MUST</strong></span> use URI versioning at deployment level <strong>ONLY</strong></a></li>
 <li><a href="#1003"><span class="must-keyword"><strong>MUST</strong></span> not use URI versioning within OpenAPI Specification</a></li>
@@ -2150,6 +2152,9 @@ to allow for API management:</p>
 <li>
 <p><code>#/info/x-audience</code> intended target audience of the API (<a href="#219">see rule 219</a>)</p>
 </li>
+<li>
+<p><code>#/info/x-total-unit-catalog</code> defined unit catalog of the API (<a href="#1005">see rule 1005</a>)</p>
+</li>
 </ul>
 </div>
 </div>
@@ -2344,6 +2349,29 @@ the target audience — even if this creates redundancies.</p>
   <span class="key">description</span>: <span class="string"><span class="content">API for &lt;...&gt;</span></span>
   <span class="key">version</span>: <span class="string"><span class="content">1.2.4</span></span>
   <span class="error">&lt;...&gt;</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="1005"><a class="link" href="#1005"><span class="must-keyword"><strong>MUST</strong></span> provide API unit catalog</a></h3>
+<div class="paragraph">
+<p>Each API must reference the unit catalog used for all units described.
+The preferred unit catalog is <a href="https://www.energistics.org/energistics-unit-of-measure-standard/">Eneristics Unit of Measure Standard – v1.0</a>. The Energistics Unit of Measure Dictionary can be downloaded in xml format <a href="https://raw.githubusercontent.com/fabref-34/sismage-apollo-api-guidelines/gh-pages/models/Energistics_Unit_of_Measure_Dictionary_V1.0.xml">here</a>.</p>
+</div>
+<div class="paragraph">
+<p>The API unit catalog is provided as API meta information in the <code>info</code>-block of
+the Open API specification and must conform to the following specification:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="yaml"><span class="key">/info/x-total-unit-catalog</span>:
+  <span class="key">type</span>: <span class="string"><span class="content">string</span></span>
+  <span class="key">x-extensible-enum</span>:
+    - <span class="string"><span class="content">ENERGISTICS_UOM_V10</span></span>
+    - <span class="string"><span class="content">RP66_V2</span></span>
+    - <span class="string"><span class="content">POSC</span></span>
+  <span class="key">description</span>: <span class="string"><span class="delimiter">|</span><span class="content">
+    Defined unit catalog of the API.</span></span></code></pre>
 </div>
 </div>
 </div>
@@ -2592,7 +2620,7 @@ level data structures, since they don&#8217;t support compatible, future extensi
 </div>
 </div>
 <div class="sect2">
-<h3 id="111"><a class="link" href="#111"><span class="should-keyword"><strong>SHOULD</strong></span> treat Open API specification as open for extension by default</a></h3>
+<h3 id="111"><a class="link" href="#111"><span class="must-keyword"><strong>MUST</strong></span> treat Open API specification as open for extension by default</a></h3>
 <div class="paragraph">
 <p>The Open API 2.0 specification is not very specific on default extensibility
 of objects, and redefines JSON-Schema keywords related to extensibility, like
@@ -7578,9 +7606,6 @@ The latter changes are additionally labeled with "Rule Change" here.</p>
 <p><code>2020-04-01:</code> Changed rule <span class="must-keyword"><strong>MUST</strong></span> to <span class="should-keyword"><strong>SHOULD</strong></span> obtain approval of clients before API shut down <a href="#185">[185]</a></p>
 </li>
 <li>
-<p><code>2020-04-01:</code> Changed rule <span class="must-keyword"><strong>MUST</strong></span> to <span class="should-keyword"><strong>SHOULD</strong></span> treat Open API specification as open for extension by default <a href="#111">[111]</a></p>
-</li>
-<li>
 <p><code>2020-04-01:</code> Changed rule <span class="must-keyword"><strong>MUST</strong></span> to <span class="should-keyword"><strong>SHOULD</strong></span> not break backward compatibility <a href="#106">[106]</a></p>
 </li>
 <li>
@@ -7684,7 +7709,7 @@ header.prepend(nav);
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-04-22 20:12:30 UTC
+Last updated 2020-04-22 20:13:54 UTC
 </div>
 </div>
 <style>

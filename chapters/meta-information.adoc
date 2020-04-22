@@ -17,7 +17,7 @@ Following Open API extension properties *must* be provided in addition:
 
 - `#/info/x-api-id` unique identifier of the API (<<215, see rule 215>>)
 - `#/info/x-audience` intended target audience of the API (<<219, see rule 219>>)
-
+- `#/info/x-total-unit-catalog` defined unit catalog of the API (<<1005, see rule 1005>>)
 
 [#116]
 == {MUST} use semantic versioning
@@ -172,4 +172,25 @@ info:
   description: API for <...>
   version: 1.2.4
   <...>
+----
+
+[#1005]
+== {MUST} provide API unit catalog
+
+Each API must reference the unit catalog used for all units described.
+The preferred unit catalog is https://www.energistics.org/energistics-unit-of-measure-standard/[Eneristics Unit of Measure Standard – v1.0]. The Energistics Unit of Measure Dictionary can be downloaded in xml format https://raw.githubusercontent.com/fabref-34/sismage-apollo-api-guidelines/gh-pages/models/Energistics_Unit_of_Measure_Dictionary_V1.0.xml[here].
+
+The API unit catalog is provided as API meta information in the `info`-block of
+the Open API specification and must conform to the following specification:
+
+[source,yaml]
+----
+/info/x-total-unit-catalog:
+  type: string
+  x-extensible-enum:
+    - ENERGISTICS_UOM_V10
+    - RP66_V2
+    - POSC
+  description: |
+    Defined unit catalog of the API. 
 ----

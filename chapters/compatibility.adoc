@@ -161,11 +161,8 @@ level data structures, since they don't support compatible, future extensions.
 
 
 [#111]
-== {SHOULD} treat Open API specification as open for extension by default
-////
-*APOLLO-Commented paragraph* SHOULD and not MUST in APOLLO context 
 == {MUST} treat Open API specification as open for extension by default
-////
+
 The Open API 2.0 specification is not very specific on default extensibility
 of objects, and redefines JSON-Schema keywords related to extensibility, like
 `additionalProperties`. Following our overall compatibility guidelines, Open
