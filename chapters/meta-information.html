@@ -687,8 +687,8 @@ info:
 <h2 id="1005">{MUST} provide API unit catalog</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Each API must reference the unit catalog used for all units described.
-The preferred unit catalog is <a href="https://www.energistics.org/energistics-unit-of-measure-standard/">Eneristics Unit of Measure Standard – v1.0</a>. The Energistics Unit of Measure Dictionary can be downloaded in xml format <a href="https://raw.githubusercontent.com/fabref-34/sismage-apollo-api-guidelines/gh-pages/models/Energistics_Unit_of_Measure_Dictionary_V1.0.xml">here</a>.</p>
+<p>Each API must reference the <strong>unit catalog</strong> used for all units described.
+The <strong>preferred unit catalog</strong> is <a href="https://www.energistics.org/energistics-unit-of-measure-standard/"><strong>Eneristics Unit of Measure Standard – v1.0</strong></a>. The <strong>Energistics Unit of Measure Dictionary</strong> can be downloaded in xml format <a href="https://raw.githubusercontent.com/fabref-34/sismage-apollo-api-guidelines/gh-pages/models/Energistics_Unit_of_Measure_Dictionary_V1.0.xml"><strong>here</strong></a>.</p>
 </div>
 <div class="paragraph">
 <p>The API unit catalog is provided as API meta information in the <code>info</code>-block of
@@ -706,12 +706,27 @@ the Open API specification and must conform to the following specification:</p>
     Defined unit catalog of the API.</code></pre>
 </div>
 </div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">openapi: 3.0.1
+info:
+  x-audience: company-internal
+  x-total-unit-catalog:ENERGISTICS_UOM_V10
+  title: Parcel Helper Service API
+  description: API for &lt;...&gt;
+  version: 1.2.4
+  &lt;...&gt;</code></pre>
+</div>
+</div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-04-22 20:27:04 UTC
+Last updated 2020-04-22 20:29:10 UTC
 </div>
 </div>
 </body>

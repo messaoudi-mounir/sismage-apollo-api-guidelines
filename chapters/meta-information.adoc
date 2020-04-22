@@ -177,8 +177,8 @@ info:
 [#1005]
 == {MUST} provide API unit catalog
 
-Each API must reference the unit catalog used for all units described.
-The preferred unit catalog is https://www.energistics.org/energistics-unit-of-measure-standard/[Eneristics Unit of Measure Standard – v1.0]. The Energistics Unit of Measure Dictionary can be downloaded in xml format https://raw.githubusercontent.com/fabref-34/sismage-apollo-api-guidelines/gh-pages/models/Energistics_Unit_of_Measure_Dictionary_V1.0.xml[here].
+Each API must reference the *unit catalog* used for all units described.
+The *preferred unit catalog* is https://www.energistics.org/energistics-unit-of-measure-standard/[*Eneristics Unit of Measure Standard – v1.0*]. The *Energistics Unit of Measure Dictionary* can be downloaded in xml format https://raw.githubusercontent.com/fabref-34/sismage-apollo-api-guidelines/gh-pages/models/Energistics_Unit_of_Measure_Dictionary_V1.0.xml[*here*].
 
 The API unit catalog is provided as API meta information in the `info`-block of
 the Open API specification and must conform to the following specification:
@@ -193,4 +193,18 @@ the Open API specification and must conform to the following specification:
     - POSC
   description: |
     Defined unit catalog of the API. 
+----
+
+Example:
+
+[source,yaml]
+----
+openapi: 3.0.1
+info:
+  x-audience: company-internal
+  x-total-unit-catalog:ENERGISTICS_UOM_V10
+  title: Parcel Helper Service API
+  description: API for <...>
+  version: 1.2.4
+  <...>
 ----
