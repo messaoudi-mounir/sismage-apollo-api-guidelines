@@ -202,7 +202,7 @@ Example:
 openapi: 3.0.1
 info:
   x-audience: company-internal
-  x-total-unit-catalog:ENERGISTICS_UOM_V10
+  x-total-unit-catalog: ENERGISTICS_UOM_V10
   title: Parcel Helper Service API
   description: API for <...>
   version: 1.2.4
