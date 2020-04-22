@@ -60,9 +60,9 @@ info:
 
 
 [#215]
-== {MUST} provide API identifiers for "company-internal" audience
+== {MUST} provide API identifiers for "company-internal" or larger audience
 
-Each API specification with "company-internal" audience must be provisioned
+Each API specification with "company-internal" or larger audience must be provisioned
 with a globally unique and immutable API identifier. 
 The API identifier is defined in the `info`-block
 of the Open API specification and must conform to the following definition:
@@ -74,9 +74,9 @@ of the Open API specification and must conform to the following definition:
   format: urn
   pattern: ^[a-z0-9][a-z0-9-:.]{6,62}[a-z0-9]$
   description: |
-    Mandatory globally unique and immutable API identifier for "company-internal" audience.
-    The API id allows to track the evolution and history of an API specification 
-    as a sequence of versions.
+    Mandatory globally unique and immutable API identifier for "company-internal" 
+    or larger audience. The API id allows to track the evolution and history of
+    an API specification as a sequence of versions.
 ----
 
 API specifications will evolve and any aspect of an Open API specification 

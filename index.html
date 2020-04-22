@@ -1461,7 +1461,7 @@ establish "consistent API look and feel" quality.
 <ul class="sectlevel2">
 <li><a href="#218"><span class="must-keyword"><strong>MUST</strong></span> contain API meta information</a></li>
 <li><a href="#116"><span class="must-keyword"><strong>MUST</strong></span> use semantic versioning</a></li>
-<li><a href="#215"><span class="must-keyword"><strong>MUST</strong></span> provide API identifiers for "company-internal" audience</a></li>
+<li><a href="#215"><span class="must-keyword"><strong>MUST</strong></span> provide API identifiers for "company-internal" or larger audience</a></li>
 <li><a href="#219"><span class="must-keyword"><strong>MUST</strong></span> provide API audience</a></li>
 <li><a href="#1005"><span class="must-keyword"><strong>MUST</strong></span> provide API unit catalog</a></li>
 </ul>
@@ -1486,7 +1486,7 @@ establish "consistent API look and feel" quality.
 <li><a href="#deprecation">8. Deprecation</a>
 <ul class="sectlevel2">
 <li><a href="#185"><span class="should-keyword"><strong>SHOULD</strong></span> obtain approval of clients before API shut down</a></li>
-<li><a href="#186"><span class="must-keyword"><strong>MUST</strong></span> collect external partner consent on deprecation time span</a></li>
+<li><a href="#186"><span class="must-keyword"><strong>MUST</strong></span> collect partner consent on deprecation time span</a></li>
 <li><a href="#187"><span class="must-keyword"><strong>MUST</strong></span> reflect deprecation in API specifications</a></li>
 <li><a href="#188"><span class="must-keyword"><strong>MUST</strong></span> monitor usage of deprecated API scheduled for sunset</a></li>
 <li><a href="#189"><span class="may-keyword"><strong>MAY</strong></span> add <code>Deprecation</code> and <code>Sunset</code> header to responses</a></li>
@@ -2221,9 +2221,9 @@ are free to decide whether they increment it or not.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="215"><a class="link" href="#215"><span class="must-keyword"><strong>MUST</strong></span> provide API identifiers for "company-internal" audience</a></h3>
+<h3 id="215"><a class="link" href="#215"><span class="must-keyword"><strong>MUST</strong></span> provide API identifiers for "company-internal" or larger audience</a></h3>
 <div class="paragraph">
-<p>Each API specification with "company-internal" audience must be provisioned
+<p>Each API specification with "company-internal" or larger audience must be provisioned
 with a globally unique and immutable API identifier.
 The API identifier is defined in the <code>info</code>-block
 of the Open API specification and must conform to the following definition:</p>
@@ -2235,9 +2235,9 @@ of the Open API specification and must conform to the following definition:</p>
   <span class="key">format</span>: <span class="string"><span class="content">urn</span></span>
   <span class="key">pattern</span>: <span class="string"><span class="content">^[a-z0-9][a-z0-9-:.]{6,62}[a-z0-9]$</span></span>
   <span class="key">description</span>: <span class="string"><span class="delimiter">|</span><span class="content">
-    Mandatory globally unique and immutable API identifier for &quot;company-internal&quot; audience.
-    The API id allows to track the evolution and history of an API specification
-    as a sequence of versions.</span></span></code></pre>
+    Mandatory globally unique and immutable API identifier for &quot;company-internal&quot;
+    or larger audience. The API id allows to track the evolution and history of
+    an API specification as a sequence of versions.</span></span></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -2772,12 +2772,12 @@ API feature.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="186"><a class="link" href="#186"><span class="must-keyword"><strong>MUST</strong></span> collect external partner consent on deprecation time span</a></h3>
+<h3 id="186"><a class="link" href="#186"><span class="must-keyword"><strong>MUST</strong></span> collect partner consent on deprecation time span</a></h3>
 <div class="paragraph">
-<p>If the API is consumed by any external partner (e.g. APIs with
-"company-internal" audience) the API owner must define a reasonable
+<p>If the API is consumed by any partner (e.g. APIs with
+"company-internal" or larger audience) the API owner must define a reasonable
 time span that the API will be maintained after the producer has
-announced deprecation. All external partners must state consent with this
+announced deprecation. All partners must state consent with this
 after-deprecation-life-span, i.e. the minimum time span between official
 deprecation and first possible sunset, <strong>before</strong> they are allowed to use the
 API.</p>
@@ -7527,7 +7527,10 @@ The latter changes are additionally labeled with "Rule Change" here.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>2020-04-22:</code> Added rule <span class="must-keyword"><strong>MUST</strong></span> MUST provide API unit catalog <a href="#1005">[1005]</a></p>
+<p><code>2020-04-22:</code> Adapted rule <span class="must-keyword"><strong>MUST</strong></span> collect partner consent on deprecation time span <a href="#186">[186]</a></p>
+</li>
+<li>
+<p><code>2020-04-22:</code> Added rule <span class="must-keyword"><strong>MUST</strong></span> provide API unit catalog <a href="#1005">[1005]</a></p>
 </li>
 <li>
 <p><code>2020-04-20:</code> Changed rule <span class="must-keyword"><strong>MUST</strong></span> use camelCase for query parameters <a href="#130">[130]</a></p>
@@ -7632,7 +7635,7 @@ The latter changes are additionally labeled with "Rule Change" here.</p>
 <p><code>2020-04-01:</code> Changed rule <span class="must-keyword"><strong>MUST</strong></span> to <span class="should-keyword"><strong>SHOULD</strong></span> define and assign permissions (scopes) <a href="#105">[105]</a></p>
 </li>
 <li>
-<p><code>2020-03-27:</code> Adapted rule <span class="must-keyword"><strong>MUST</strong></span> provide API identifiers <strong>for "company-internal" audience</strong> <a href="#215">[215]</a></p>
+<p><code>2020-03-27:</code> Adapted rule <span class="must-keyword"><strong>MUST</strong></span> provide API identifiers <strong>for "company-internal" or larger audience</strong> <a href="#215">[215]</a></p>
 </li>
 <li>
 <p><code>2020-03-27:</code> Removed rule <span class="must-keyword"><strong>MUST</strong></span> use media type versioning <a href="#114">[114]</a></p>
@@ -7729,7 +7732,7 @@ header.prepend(nav);
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-04-22 20:29:36 UTC
+Last updated 2020-04-22 20:43:55 UTC
 </div>
 </div>
 <style>
