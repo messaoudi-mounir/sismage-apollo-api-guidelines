@@ -24,6 +24,10 @@ establish "consistent API look and feel" quality.
 {MUST} contain API meta information <<218,[218]>>
 
 {MUST} use semantic versioning <<116,[116]>>
+
+{MUST} provide API audience <<219,[219]>>
+
+{MUST} provide API unit catalog <<1005,[1005]>>
 | *Compatibility*    |
 {MUST} always return JSON objects as top-level data structures <<110,[110]>>
 
