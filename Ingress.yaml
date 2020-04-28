@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: gke-test-ingress
+  annotations:
+    kubernetes.io/ingress.global-static-ip-name: "web-static-ip2"
+    ingress.gcp.kubernetes.io/pre-shared-cert: "apollo-cert"
+
+spec:
+  rules:
+  - host: restful-api-guidelines.apollo.total
+    http:
+      paths:
+      - backend:
+          serviceName: gke-test-service
+          servicePort: 80
+        path: /*
