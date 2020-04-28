@@ -14,7 +14,7 @@ used in this document (case insensitive) are to be interpreted as described in h
 2119].
 
 Based on https://www.ietf.org/rfc/rfc2119.txt[RFC 2119] definition of "SHOULD",
-we strongly recommend to follow {SHOULD} requirements in case of new developments.
+we *strongly recommend* to follow {SHOULD} requirements in case of *new developments*.
 
 [cols="22%,78%,frame="topbot",options="header"]
 |=========================================================
