@@ -1327,6 +1327,15 @@ but we <strong>strongly encourage</strong> our teams to <strong>carefully read t
 establish "consistent API look and feel" quality.
 <strong>Ideally, all SISMAGE &amp; Apollo APIs will look like the same author created them.</strong></p>
 </div>
+<div class="paragraph">
+<p>The requirement level keywords "MUST", "MUST NOT", "SHOULD", "SHOULD NOT", and "MAY"
+used in this document (case insensitive) are to be interpreted as described in <a href="https://www.ietf.org/rfc/rfc2119.txt">RFC
+2119</a>.</p>
+</div>
+<div class="paragraph">
+<p>Based on <a href="https://www.ietf.org/rfc/rfc2119.txt">RFC 2119</a> definition of "SHOULD",
+we strongly recommend to follow <span class="should-keyword"><strong>SHOULD</strong></span> requirements in case of new developments.</p>
+</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 22%;">
@@ -1367,7 +1376,7 @@ establish "consistent API look and feel" quality.
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>JSON Guidelines</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="must-keyword"><strong>MUST</strong></span> property names must be ASCII camelCase <a href="#118">[118]</a></p>
 <p class="tableblock"><span class="must-keyword"><strong>MUST</strong></span> declare enum values using UPPER_SNAKE_CASE format <a href="#240">[240]</a></p>
-<p class="tableblock"><span class="must-keyword"><strong>MUST</strong></span> pluralize array names <a href="#120">[120]</a></p>
+<p class="tableblock"><span class="should-keyword"><strong>SHOULD</strong></span> pluralize array names <a href="#120">[120]</a></p>
 <p class="tableblock"><span class="must-keyword"><strong>MUST</strong></span> not use null for boolean properties <a href="#122">[122]</a></p>
 <p class="tableblock"><span class="should-keyword"><strong>SHOULD</strong></span> not use null for empty arrays <a href="#124">[124]</a></p>
 <p class="tableblock"><span class="should-keyword"><strong>SHOULD</strong></span> represent enumerations as strings <a href="#125">[125]</a></p>
@@ -1498,7 +1507,7 @@ establish "consistent API look and feel" quality.
 <li><a href="#118"><span class="must-keyword"><strong>MUST</strong></span> property names must be ASCII camelCase</a></li>
 <li><a href="#240"><span class="must-keyword"><strong>MUST</strong></span> declare enum values using UPPER_SNAKE_CASE format</a></li>
 <li><a href="#216"><span class="should-keyword"><strong>SHOULD</strong></span> define maps using <code>additionalProperties</code></a></li>
-<li><a href="#120"><span class="must-keyword"><strong>MUST</strong></span> pluralize array names</a></li>
+<li><a href="#120"><span class="should-keyword"><strong>SHOULD</strong></span> pluralize array names</a></li>
 <li><a href="#122"><span class="must-keyword"><strong>MUST</strong></span> not use <code>null</code> for boolean properties</a></li>
 <li><a href="#123"><span class="should-keyword"><strong>SHOULD</strong></span> use same semantics for <code>null</code> and absent properties</a></li>
 <li><a href="#124"><span class="should-keyword"><strong>SHOULD</strong></span> not use <code>null</code> for empty arrays</a></li>
@@ -2947,7 +2956,7 @@ this in the description of the map object&#8217;s schema.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="120"><a class="link" href="#120"><span class="must-keyword"><strong>MUST</strong></span> pluralize array names</a></h3>
+<h3 id="120"><a class="link" href="#120"><span class="should-keyword"><strong>SHOULD</strong></span> pluralize array names</a></h3>
 <div class="paragraph">
 <p>To indicate they contain multiple values prefer to pluralize array
 names. This implies that object names should in turn be singular.</p>
@@ -7528,9 +7537,6 @@ The latter changes are additionally labeled with "Rule Change" here.</p>
 <div class="ulist">
 <ul>
 <li>
-<p><code>2020-04-22:</code> Changed rule <span class="should-keyword"><strong>SHOULD</strong></span> to <span class="must-keyword"><strong>MUST</strong></span> pluralize array names <a href="#120">[120]</a></p>
-</li>
-<li>
 <p><code>2020-04-22:</code> Adapted rule <span class="must-keyword"><strong>MUST</strong></span> collect partner consent on deprecation time span <a href="#186">[186]</a></p>
 </li>
 <li>
@@ -7736,7 +7742,7 @@ header.prepend(nav);
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-04-28 13:27:25 UTC
+Last updated 2020-04-28 15:22:56 UTC
 </div>
 </div>
 <style>

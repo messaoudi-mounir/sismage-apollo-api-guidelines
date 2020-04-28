@@ -13,7 +13,6 @@ To see a list of all changes, please have a look at the https://github.com/f-fab
 [[rule-changes]]
 == Rule Changes
 
-* `2020-04-22:` Changed rule {SHOULD} to {MUST} pluralize array names <<120,[120]>>
 * `2020-04-22:` Adapted rule {MUST} collect partner consent on deprecation time span <<186,[186]>>
 * `2020-04-22:` Added rule {MUST} provide API unit catalog <<1005,[1005]>>
 

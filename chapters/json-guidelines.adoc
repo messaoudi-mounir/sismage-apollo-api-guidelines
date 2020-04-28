@@ -91,11 +91,8 @@ An actual JSON object described by this might then look like this:
 
 
 [#120]
-== {MUST} pluralize array names
-////
-*APOLLO-Commented paragraph* MUST and not SHOULD in APOLLO context 
 == {SHOULD} pluralize array names
-////
+
 To indicate they contain multiple values prefer to pluralize array
 names. This implies that object names should in turn be singular.
 
