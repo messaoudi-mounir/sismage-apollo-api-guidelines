@@ -3,7 +3,7 @@
 https://github.com/f-fabre/sismage-apollo-restful-api-guidelines/actions[image:https://github.com/f-fabre/sismage-apollo-restful-api-guidelines/workflows/html_conversion/badge.svg?branch=master[Build Status]]
 
 Latest published version:
-https://https://restful-api-guidelines.apollo.total/[*HTML*]
+https://restful-api-guidelines.apollo.total[*HTML*]
 
 == Purpose
 
