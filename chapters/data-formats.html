@@ -486,6 +486,48 @@ names).</p>
 </div>
 </div>
 <div class="sect1">
+<h2 id="1006">{MUST} reference a data catalog for API with <strong>"company-internal" or larger audience</strong></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The design of API data model MUST consider the application use cases, as well as the upstream
+and downstream systems, use cases.
+The design of the data model of an API MUST consider either the GIDEA Logical Data Model of the
+application (internal link) or a Standard data model in Oil &amp; Gas Industry as data catalog reference.
+Once the choice has been made, different names for entities and attributes MAY be used ONLY if
+the data model chosen as reference is not including them.
+The consistency of the names of entities and attributes across the whole API of a same product MUST
+be maintained.</p>
+</div>
+<div class="paragraph">
+<p>The reference data catalog associated with an API is mandatory and {MUST} be provided as a specific
+extension of Open API standard and must conform to the following specification:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-yaml" data-lang="yaml">x-total-mainProperty:
+  type: string
+  x-extensible-enum:
+    - GIDEA
+    - WITSML_20
+    - WITSML_21
+    - WITSML_14
+  description: |
+    Defined data catalog of the property.</code></pre>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="1007">{MUST} try to reconcile terms with Standard data model in Oil &amp; Gas Industry for API with <strong>"company-internal" or larger audience</strong></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>When a property <strong>can be mapped</strong> to a widely used Standard in Oil &amp; Gas Industry such as OSDU or
+Energistics (as per CR EP INF 012), this mapping {MUST} be provided as a specific property
+managed as an extension of Open API standard.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="168">{MAY} use non JSON media types for binary data or alternative content representations</h2>
 <div class="sectionbody">
 <div class="paragraph">
@@ -859,7 +901,7 @@ specific language types in Java will translate to <code>BigDecimal</code> for
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-04-28 15:35:45 UTC
+Last updated 2020-04-29 08:03:49 UTC
 </div>
 </div>
 </body>

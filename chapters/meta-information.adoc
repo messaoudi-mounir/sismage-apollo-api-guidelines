@@ -60,7 +60,7 @@ info:
 
 
 [#215]
-== {MUST} provide API identifiers for "company-internal" or larger audience
+== {MUST} provide API identifiers for API with *"company-internal" or larger audience*
 
 Each API specification with "company-internal" or larger audience must be provisioned
 with a globally unique and immutable API identifier. 

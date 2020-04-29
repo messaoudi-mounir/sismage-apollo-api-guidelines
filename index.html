@@ -1386,6 +1386,8 @@ we <strong>strongly recommend</strong> to follow <span class="should-keyword"><s
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><strong>Data formats</strong></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><span class="must-keyword"><strong>MUST</strong></span> use JSON to encode structured data <a href="#167">[167]</a></p>
+<p class="tableblock"><span class="must-keyword"><strong>MUST</strong></span> reference a data catalog for API with <strong>"company-internal" or larger audience</strong> <a href="#1006">[1006]</a></p>
+<p class="tableblock"><span class="must-keyword"><strong>MUST</strong></span> try to reconcile terms with Standard data model in Oil &amp; Gas Industry for API with <strong>"company-internal" or larger audience</strong> <a href="#1007">[1007]</a></p>
 <p class="tableblock"><span class="must-keyword"><strong>MUST</strong></span> use standard date and time formats <a href="#169">[169]</a></p>
 <p class="tableblock"><span class="should-keyword"><strong>SHOULD</strong></span> use standards for country, language and currency codes <a href="#170">[170]</a></p>
 <p class="tableblock"><span class="must-keyword"><strong>MUST</strong></span> define format for number and integer types <a href="#171">[171]</a></p></td>
@@ -1470,7 +1472,7 @@ we <strong>strongly recommend</strong> to follow <span class="should-keyword"><s
 <ul class="sectlevel2">
 <li><a href="#218"><span class="must-keyword"><strong>MUST</strong></span> contain API meta information</a></li>
 <li><a href="#116"><span class="must-keyword"><strong>MUST</strong></span> use semantic versioning</a></li>
-<li><a href="#215"><span class="must-keyword"><strong>MUST</strong></span> provide API identifiers for "company-internal" or larger audience</a></li>
+<li><a href="#215"><span class="must-keyword"><strong>MUST</strong></span> provide API identifiers for API with <strong>"company-internal" or larger audience</strong></a></li>
 <li><a href="#219"><span class="must-keyword"><strong>MUST</strong></span> provide API audience</a></li>
 <li><a href="#1005"><span class="must-keyword"><strong>MUST</strong></span> provide API unit catalog</a></li>
 </ul>
@@ -1520,6 +1522,8 @@ we <strong>strongly recommend</strong> to follow <span class="should-keyword"><s
 <li><a href="#data-formats">10. Data formats</a>
 <ul class="sectlevel2">
 <li><a href="#167"><span class="must-keyword"><strong>MUST</strong></span> use JSON to encode structured data</a></li>
+<li><a href="#1006"><span class="must-keyword"><strong>MUST</strong></span> reference a data catalog for API with <strong>"company-internal" or larger audience</strong></a></li>
+<li><a href="#1007"><span class="must-keyword"><strong>MUST</strong></span> try to reconcile terms with Standard data model in Oil &amp; Gas Industry for API with <strong>"company-internal" or larger audience</strong></a></li>
 <li><a href="#168"><span class="may-keyword"><strong>MAY</strong></span> use non JSON media types for binary data or alternative content representations</a></li>
 <li><a href="#239"><span class="should-keyword"><strong>SHOULD</strong></span> encode embedded binary data in <code>base64url</code></a></li>
 <li><a href="#172"><span class="should-keyword"><strong>SHOULD</strong></span> prefer standard media type name <code>application/json</code></a></li>
@@ -2231,7 +2235,7 @@ are free to decide whether they increment it or not.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="215"><a class="link" href="#215"><span class="must-keyword"><strong>MUST</strong></span> provide API identifiers for "company-internal" or larger audience</a></h3>
+<h3 id="215"><a class="link" href="#215"><span class="must-keyword"><strong>MUST</strong></span> provide API identifiers for API with <strong>"company-internal" or larger audience</strong></a></h3>
 <div class="paragraph">
 <p>Each API specification with "company-internal" or larger audience must be provisioned
 with a globally unique and immutable API identifier.
@@ -3202,6 +3206,44 @@ contain non-characters or surrogates, and</p>
 names).</p>
 </li>
 </ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="1006"><a class="link" href="#1006"><span class="must-keyword"><strong>MUST</strong></span> reference a data catalog for API with <strong>"company-internal" or larger audience</strong></a></h3>
+<div class="paragraph">
+<p>The design of API data model MUST consider the application use cases, as well as the upstream
+and downstream systems, use cases.
+The design of the data model of an API MUST consider either the GIDEA Logical Data Model of the
+application (internal link) or a Standard data model in Oil &amp; Gas Industry as data catalog reference.
+Once the choice has been made, different names for entities and attributes MAY be used ONLY if
+the data model chosen as reference is not including them.
+The consistency of the names of entities and attributes across the whole API of a same product MUST
+be maintained.</p>
+</div>
+<div class="paragraph">
+<p>The reference data catalog associated with an API is mandatory and <span class="must-keyword"><strong>MUST</strong></span> be provided as a specific
+extension of Open API standard and must conform to the following specification:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="yaml"><span class="key">x-total-mainProperty</span>:
+<span class="error">  type: string</span>
+<span class="error">  x-extensible-enum:</span>
+<span class="error">    - GIDEA</span>
+<span class="error">    - WITSML_20</span>
+<span class="error">    - WITSML_21</span>
+<span class="error">    - WITSML_14</span>
+<span class="error">  description: |</span>
+<span class="error">    Defined data catalog of the property.</span></code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="1007"><a class="link" href="#1007"><span class="must-keyword"><strong>MUST</strong></span> try to reconcile terms with Standard data model in Oil &amp; Gas Industry for API with <strong>"company-internal" or larger audience</strong></a></h3>
+<div class="paragraph">
+<p>When a property <strong>can be mapped</strong> to a widely used Standard in Oil &amp; Gas Industry such as OSDU or
+Energistics (as per CR EP INF 012), this mapping <span class="must-keyword"><strong>MUST</strong></span> be provided as a specific property
+managed as an extension of Open API standard.</p>
 </div>
 </div>
 <div class="sect2">
@@ -7537,6 +7579,12 @@ The latter changes are additionally labeled with "Rule Change" here.</p>
 <div class="ulist">
 <ul>
 <li>
+<p><code>2020-04-29:</code> Added rule <span class="must-keyword"><strong>MUST</strong></span> try to reconcile terms with Standard data model in Oil &amp; Gas Industry for API with <strong>"company-internal" or larger audience</strong> <a href="#1007">[1007]</a></p>
+</li>
+<li>
+<p><code>2020-04-29:</code> Added rule <span class="must-keyword"><strong>MUST</strong></span> reference a data catalog for API with <strong>"company-internal" or larger audience</strong> <a href="#1006">[1006]</a></p>
+</li>
+<li>
 <p><code>2020-04-22:</code> Adapted rule <span class="must-keyword"><strong>MUST</strong></span> collect partner consent on deprecation time span <a href="#186">[186]</a></p>
 </li>
 <li>
@@ -7645,7 +7693,7 @@ The latter changes are additionally labeled with "Rule Change" here.</p>
 <p><code>2020-04-01:</code> Changed rule <span class="must-keyword"><strong>MUST</strong></span> to <span class="should-keyword"><strong>SHOULD</strong></span> define and assign permissions (scopes) <a href="#105">[105]</a></p>
 </li>
 <li>
-<p><code>2020-03-27:</code> Adapted rule <span class="must-keyword"><strong>MUST</strong></span> provide API identifiers <strong>for "company-internal" or larger audience</strong> <a href="#215">[215]</a></p>
+<p><code>2020-03-27:</code> Adapted rule <span class="must-keyword"><strong>MUST</strong></span> provide API identifiers for API with <strong>"company-internal" or larger audience</strong> <a href="#215">[215]</a></p>
 </li>
 <li>
 <p><code>2020-03-27:</code> Removed rule <span class="must-keyword"><strong>MUST</strong></span> use media type versioning <a href="#114">[114]</a></p>
@@ -7742,7 +7790,7 @@ header.prepend(nav);
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2020-04-28 15:35:45 UTC
+Last updated 2020-04-29 08:03:49 UTC
 </div>
 </div>
 <style>

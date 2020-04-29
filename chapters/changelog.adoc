@@ -13,6 +13,9 @@ To see a list of all changes, please have a look at the https://github.com/f-fab
 [[rule-changes]]
 == Rule Changes
 
+* `2020-04-29:` Added rule {MUST} try to reconcile terms with Standard data model in Oil & Gas Industry for API with *"company-internal" or larger audience* <<1007,[1007]>>
+* `2020-04-29:` Added rule {MUST} reference a data catalog for API with *"company-internal" or larger audience* <<1006,[1006]>>
+
 * `2020-04-22:` Adapted rule {MUST} collect partner consent on deprecation time span <<186,[186]>>
 * `2020-04-22:` Added rule {MUST} provide API unit catalog <<1005,[1005]>>
 
@@ -57,7 +60,7 @@ To see a list of all changes, please have a look at the https://github.com/f-fab
 * `2020-04-01:` Changed rule {MUST} to {SHOULD} not break backward compatibility <<106,[106]>>
 * `2020-04-01:` Changed rule {MUST} to {SHOULD} define and assign permissions (scopes) <<105,[105]>>
 
-* `2020-03-27:` Adapted rule {MUST} provide API identifiers *for "company-internal" or larger audience* <<215,[215]>>
+* `2020-03-27:` Adapted rule {MUST} provide API identifiers for API with *"company-internal" or larger audience* <<215,[215]>>
 * `2020-03-27:` Removed rule {MUST} use media type versioning <<114,[114]>>
 * `2020-03-27:` Removed rule {SHOULD} avoid versioning <<113,[113]>>
 * `2020-03-27:` Introduced the changelog. From now on all rule changes on API guidelines will be recorded here.
